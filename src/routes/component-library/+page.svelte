@@ -2,37 +2,68 @@
 	import '../../app.css';
 	import './styles.css';
 
-	// Section components
+	// Getting Started
 	import Overview from './sections/Overview.svelte';
+
+	// Design Tokens
 	import Colors from './sections/Colors.svelte';
 	import Typography from './sections/Typography.svelte';
 	import Icons from './sections/Icons.svelte';
 	import Spacing from './sections/Spacing.svelte';
 	import Shadows from './sections/Shadows.svelte';
+
+	// Actions
 	import Buttons from './sections/Buttons.svelte';
+	import ToggleGroups from './sections/ToggleGroups.svelte';
+
+	// Inputs & Forms
 	import Inputs from './sections/Inputs.svelte';
 	import FormControls from './sections/FormControls.svelte';
 	import Selects from './sections/Selects.svelte';
 	import Sliders from './sections/Sliders.svelte';
+	import TagInput from './sections/TagInput.svelte';
+	import Labels from './sections/Labels.svelte';
+	import Forms from './sections/Forms.svelte';
+
+	// Data Display
 	import Badges from './sections/Badges.svelte';
 	import Avatars from './sections/Avatars.svelte';
 	import Cards from './sections/Cards.svelte';
-	import Accordions from './sections/Accordions.svelte';
 	import Tables from './sections/Tables.svelte';
+	import Accordions from './sections/Accordions.svelte';
+	import Collapsibles from './sections/Collapsibles.svelte';
+	import DataDisplay from './sections/DataDisplay.svelte';
+	import Timeline from './sections/Timeline.svelte';
+	import Carousel from './sections/Carousel.svelte';
+	import Keyboard from './sections/Keyboard.svelte';
+
+	// Navigation
 	import Navigation from './sections/Navigation.svelte';
 	import TabsSection from './sections/TabsSection.svelte';
 	import Menus from './sections/Menus.svelte';
+	import ContextMenus from './sections/ContextMenus.svelte';
+	import Pagination from './sections/Pagination.svelte';
+	import Stepper from './sections/Stepper.svelte';
+	import CommandPalette from './sections/CommandPalette.svelte';
+
+	// Overlays
 	import Dialogs from './sections/Dialogs.svelte';
+	import Drawers from './sections/Drawers.svelte';
 	import Tooltips from './sections/Tooltips.svelte';
+	import HoverCards from './sections/HoverCards.svelte';
 	import Alerts from './sections/Alerts.svelte';
 	import Toasts from './sections/Toasts.svelte';
+
+	// Feedback
 	import ProgressBars from './sections/ProgressBars.svelte';
 	import Feedback from './sections/Feedback.svelte';
 	import Messages from './sections/Messages.svelte';
-	import DataDisplay from './sections/DataDisplay.svelte';
+
+	// AI & Chat
 	import AiChat from './sections/AiChat.svelte';
 	import AiElements from './sections/AiElements.svelte';
-	import Forms from './sections/Forms.svelte';
+
+	// Patterns
 	import Layouts from './sections/Layouts.svelte';
 	import Animations from './sections/Animations.svelte';
 	import EmptyStates from './sections/EmptyStates.svelte';
@@ -55,12 +86,15 @@
 		]},
 		{ label: 'Actions', items: [
 			{ id: 'buttons', label: 'Buttons' },
+			{ id: 'toggle-groups', label: 'Toggle Groups' },
 		]},
 		{ label: 'Inputs & Forms', items: [
 			{ id: 'inputs', label: 'Text Inputs' },
 			{ id: 'form-controls', label: 'Toggle / Check / Radio' },
 			{ id: 'selects', label: 'Select & Dropdown' },
 			{ id: 'sliders', label: 'Sliders & Range' },
+			{ id: 'tag-input', label: 'Tag Input' },
+			{ id: 'labels', label: 'Labels & Fields' },
 			{ id: 'forms', label: 'Form Patterns' },
 		]},
 		{ label: 'Data Display', items: [
@@ -69,16 +103,26 @@
 			{ id: 'cards', label: 'Cards & Panels' },
 			{ id: 'tables', label: 'Tables' },
 			{ id: 'accordions', label: 'Accordions' },
+			{ id: 'collapsibles', label: 'Collapsibles' },
 			{ id: 'data-display', label: 'Lists & Stats' },
+			{ id: 'timeline', label: 'Timeline' },
+			{ id: 'carousel', label: 'Carousel' },
+			{ id: 'keyboard', label: 'Keyboard Shortcuts' },
 		]},
 		{ label: 'Navigation', items: [
 			{ id: 'navigation', label: 'Nav & Breadcrumbs' },
 			{ id: 'tabs', label: 'Tabs' },
 			{ id: 'menus', label: 'Menus & Dropdowns' },
+			{ id: 'context-menus', label: 'Context Menus' },
+			{ id: 'pagination', label: 'Pagination' },
+			{ id: 'stepper', label: 'Stepper & Wizard' },
+			{ id: 'command-palette', label: 'Command Palette' },
 		]},
 		{ label: 'Overlays', items: [
 			{ id: 'dialogs', label: 'Dialogs & Modals' },
+			{ id: 'drawers', label: 'Drawers & Sheets' },
 			{ id: 'tooltips', label: 'Tooltips & Popovers' },
+			{ id: 'hover-cards', label: 'Hover Cards' },
 			{ id: 'alerts', label: 'Alerts & Banners' },
 			{ id: 'toasts', label: 'Toast Notifications' },
 		]},
@@ -113,22 +157,35 @@
 		'spacing': Spacing,
 		'shadows': Shadows,
 		'buttons': Buttons,
+		'toggle-groups': ToggleGroups,
 		'inputs': Inputs,
 		'form-controls': FormControls,
 		'selects': Selects,
 		'sliders': Sliders,
+		'tag-input': TagInput,
+		'labels': Labels,
 		'forms': Forms,
 		'badges': Badges,
 		'avatars': Avatars,
 		'cards': Cards,
 		'tables': Tables,
 		'accordions': Accordions,
+		'collapsibles': Collapsibles,
 		'data-display': DataDisplay,
+		'timeline': Timeline,
+		'carousel': Carousel,
+		'keyboard': Keyboard,
 		'navigation': Navigation,
 		'tabs': TabsSection,
 		'menus': Menus,
+		'context-menus': ContextMenus,
+		'pagination': Pagination,
+		'stepper': Stepper,
+		'command-palette': CommandPalette,
 		'dialogs': Dialogs,
+		'drawers': Drawers,
 		'tooltips': Tooltips,
+		'hover-cards': HoverCards,
 		'alerts': Alerts,
 		'toasts': Toasts,
 		'progress': ProgressBars,
