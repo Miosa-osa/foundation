@@ -1,7 +1,5 @@
 <script lang="ts">
 	import '../../app.css';
-	import '$lib/modules/theme/styles/bos-variables.css';
-	import '$lib/modules/theme/styles/variables.css';
 	import './styles.css';
 
 	// Section components

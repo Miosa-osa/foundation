@@ -122,16 +122,28 @@ src/routes/component-library/
 ## Quick Start
 
 ```bash
-# Clone
+# Clone the repo
 git clone https://github.com/Miosa-osa/foundation.git
 cd foundation
 
-# Install (from the parent SvelteKit project)
+# Install dependencies
 npm install
 
-# Run the component library
+# Start the dev server
 npm run dev
-# Visit http://localhost:5173/component-library
+
+# Open in browser
+# http://localhost:5173
+# (auto-redirects to /component-library)
+```
+
+### Available Scripts
+
+```bash
+npm run dev       # Start dev server with HMR
+npm run build     # Production build
+npm run preview   # Preview production build
+npm run check     # TypeScript + Svelte type checking
 ```
 
 ### Using Components
