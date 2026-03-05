@@ -4,12 +4,12 @@
 
 <section class="ds-section">
 	<h2 class="ds-title">Buttons</h2>
-	<p class="ds-desc">The platform's primary interaction element. Pill-shaped with dark monochrome as the default style.</p>
+	<p class="ds-desc">Four shape systems for different contexts. Full radius (pill), standard radius (rounded), tight radius (compact), and frosted glass (glassmorphic). Each shape has its own variant, size, and state system.</p>
 
-	<!-- ═══ PILL BUTTONS — THE STANDARD ═══ -->
+	<!-- ═══ FULL RADIUS (PILL) ═══ -->
 	<div class="ds-card">
-		<h3 class="ds-card__title">Pill Buttons — All Variants</h3>
-		<p class="ds-card__sub">Dark monochrome gradient is the primary style. CSS classes from <code>app.css</code></p>
+		<h3 class="ds-card__title">Full Radius — Pill Shape</h3>
+		<p class="ds-card__sub">9999px radius. The hero shape — CTAs, primary actions, onboarding. Dark monochrome gradient is the primary variant.</p>
 
 		<h4 class="ds-card__h4">Core Variants</h4>
 		<div class="ds-demo">
@@ -303,16 +303,28 @@
 				<tr><td><code>.btn-pill-loading</code></td><td>Loading spinner state</td></tr>
 				<tr><td><code>.btn-pill-block</code></td><td>Full width</td></tr>
 				<tr><td><code>.btn-pill-group</code></td><td>Segmented control wrapper</td></tr>
+				<tr><td colspan="2" style="padding-top: 12px; font-weight: 600; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Glass Family</td></tr>
+				<tr><td><code>.btn-glass</code></td><td>Base — required on every glass button</td></tr>
+				<tr><td><code>.btn-glass-pill</code></td><td>Full-radius glass shape (9999px)</td></tr>
+				<tr><td><code>.btn-glass-rounded</code></td><td>Rounded glass shape (8px)</td></tr>
+				<tr><td><code>.btn-glass-compact</code></td><td>Compact glass shape (6px)</td></tr>
+				<tr><td><code>.btn-glass-light</code></td><td>Light frosted glass surface</td></tr>
+				<tr><td><code>.btn-glass-dark</code></td><td>Dark frosted glass surface</td></tr>
+				<tr><td><code>.btn-glass-frosted</code></td><td>Subtle frosted glass</td></tr>
+				<tr><td><code>.btn-glass-subtle</code></td><td>Barely-there glass tint</td></tr>
+				<tr><td><code>.btn-glass-accent</code></td><td>Gradient glass with inner glow</td></tr>
+				<tr><td colspan="2" style="padding-top: 12px; font-weight: 600; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">Gray Spectrum</td></tr>
+				<tr><td><code>.btn-pill-gray-100</code> to <code>.btn-pill-gray-900</code></td><td>9-shade monochrome scale</td></tr>
 			</tbody>
 		</table>
 	</div>
 
 	<div class="ds-divider"></div>
 
-	<!-- ═══ SQUARE-ROUNDED BUTTONS ═══ -->
+	<!-- ═══ STANDARD RADIUS (ROUNDED) ═══ -->
 	<div class="ds-card">
-		<h3 class="ds-card__title">Square-Rounded Buttons</h3>
-		<p class="ds-card__sub">8px radius — for forms, cards, settings, and inline actions. Less dominant than pill, more structured than flat.</p>
+		<h3 class="ds-card__title">Standard Radius — Rounded Shape</h3>
+		<p class="ds-card__sub">8px radius. The workhorse — forms, cards, settings, inline actions. Structured but not dominant.</p>
 
 		<h4 class="ds-card__h4">Core Variants</h4>
 		<div class="ds-demo">
@@ -409,10 +421,10 @@
 		</div>
 	</div>
 
-	<!-- ═══ COMPACT BUTTONS ═══ -->
+	<!-- ═══ TIGHT RADIUS (COMPACT) ═══ -->
 	<div class="ds-card">
-		<h3 class="ds-card__title">Compact Buttons</h3>
-		<p class="ds-card__sub">6px radius, tight padding — for toolbars, data tables, badge-like actions, and dense UIs where space is at a premium.</p>
+		<h3 class="ds-card__title">Tight Radius — Compact Shape</h3>
+		<p class="ds-card__sub">6px radius, tight padding. For toolbars, data tables, badge-like actions, and dense UIs where space is at a premium.</p>
 
 		<h4 class="ds-card__h4">Core Variants</h4>
 		<div class="ds-demo">
@@ -509,34 +521,165 @@
 		</div>
 	</div>
 
-	<!-- ═══ WHEN TO USE WHICH ═══ -->
+	<div class="ds-divider"></div>
+
+	<!-- ═══ GLASS BUTTONS (GLASSMORPHIC) ═══ -->
 	<div class="ds-card">
-		<h3 class="ds-card__title">When to Use Which Shape</h3>
-		<p class="ds-card__sub">Shape communicates context. Matching the right shape to the right situation keeps the UI coherent.</p>
+		<h3 class="ds-card__title">Glass Buttons — Glassmorphic</h3>
+		<p class="ds-card__sub">Frosted glass with <code>backdrop-filter: blur(20px)</code>. Three shapes: pill, rounded, compact. Best on dark or image backgrounds.</p>
+
+		<h4 class="ds-card__h4">Glass Variants (Pill Shape)</h4>
+		<div class="ds-demo" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #0a0a0a); padding: 32px; border-radius: 12px;">
+			<button class="btn-glass btn-glass-pill btn-glass-light">Light Glass</button>
+			<button class="btn-glass btn-glass-pill btn-glass-dark">Dark Glass</button>
+			<button class="btn-glass btn-glass-pill btn-glass-frosted">Frosted</button>
+			<button class="btn-glass btn-glass-pill btn-glass-subtle">Subtle</button>
+			<button class="btn-glass btn-glass-pill btn-glass-accent">Accent</button>
+		</div>
+
+		<h4 class="ds-card__h4">Glass Variants (Rounded Shape)</h4>
+		<div class="ds-demo" style="background: linear-gradient(135deg, #111, #222, #111); padding: 32px; border-radius: 12px;">
+			<button class="btn-glass btn-glass-rounded btn-glass-light">Light Glass</button>
+			<button class="btn-glass btn-glass-rounded btn-glass-dark">Dark Glass</button>
+			<button class="btn-glass btn-glass-rounded btn-glass-frosted">Frosted</button>
+			<button class="btn-glass btn-glass-rounded btn-glass-subtle">Subtle</button>
+			<button class="btn-glass btn-glass-rounded btn-glass-accent">Accent</button>
+		</div>
+
+		<h4 class="ds-card__h4">Glass Variants (Compact Shape)</h4>
+		<div class="ds-demo" style="background: linear-gradient(135deg, #0d0d0d, #1a1a1a); padding: 24px; border-radius: 12px;">
+			<button class="btn-glass btn-glass-compact btn-glass-light">Light</button>
+			<button class="btn-glass btn-glass-compact btn-glass-dark">Dark</button>
+			<button class="btn-glass btn-glass-compact btn-glass-frosted">Frosted</button>
+			<button class="btn-glass btn-glass-compact btn-glass-subtle">Subtle</button>
+			<button class="btn-glass btn-glass-compact btn-glass-accent">Accent</button>
+		</div>
+
+		<h4 class="ds-card__h4">Glass Sizes</h4>
+		<div class="ds-demo" style="align-items: flex-end; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 32px; border-radius: 12px;">
+			<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-xs">Extra Small</button>
+			<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-sm">Small</button>
+			<button class="btn-glass btn-glass-pill btn-glass-light">Default</button>
+			<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-lg">Large</button>
+			<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-xl">Extra Large</button>
+		</div>
+
+		<h4 class="ds-card__h4">Glass Icon Buttons</h4>
+		<div class="ds-demo" style="background: linear-gradient(135deg, #111, #1a1a2e); padding: 24px; border-radius: 12px;">
+			<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-icon btn-glass-sm" aria-label="Add">
+				<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+			</button>
+			<button class="btn-glass btn-glass-pill btn-glass-frosted btn-glass-icon" aria-label="Search">
+				<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+			</button>
+			<button class="btn-glass btn-glass-pill btn-glass-accent btn-glass-icon btn-glass-lg" aria-label="Settings">
+				<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+			</button>
+			<button class="btn-glass btn-glass-rounded btn-glass-dark btn-glass-icon" aria-label="Menu">
+				<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+			</button>
+		</div>
+
+		<h4 class="ds-card__h4">Glass Patterns — Real-World</h4>
+		<div class="ds-demo" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #0a0a0a); padding: 32px; border-radius: 12px; flex-direction: column; gap: 20px;">
+			<!-- Nav bar -->
+			<div style="display: flex; gap: 4px; padding: 4px; background: rgba(255,255,255,0.04); border-radius: 9999px; border: 1px solid rgba(255,255,255,0.06);">
+				<button class="btn-glass btn-glass-pill btn-glass-light btn-glass-sm">Dashboard</button>
+				<button class="btn-glass btn-glass-pill btn-glass-subtle btn-glass-sm">Projects</button>
+				<button class="btn-glass btn-glass-pill btn-glass-subtle btn-glass-sm">Settings</button>
+			</div>
+			<!-- Card actions -->
+			<div style="display: flex; gap: 8px;">
+				<button class="btn-glass btn-glass-pill btn-glass-accent">
+					<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+					New Project
+				</button>
+				<button class="btn-glass btn-glass-pill btn-glass-frosted">
+					<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+					Import
+				</button>
+				<button class="btn-glass btn-glass-pill btn-glass-subtle">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="ds-divider"></div>
+
+	<!-- ═══ GRAY SPECTRUM ═══ -->
+	<div class="ds-card">
+		<h3 class="ds-card__title">Gray Spectrum</h3>
+		<p class="ds-card__sub">9 shades from near-white to near-black. Use the spectrum for subtle hierarchies without introducing color.</p>
+
+		<h4 class="ds-card__h4">Full Spectrum (Pill Shape)</h4>
+		<div class="ds-demo" style="flex-wrap: wrap;">
+			<button class="btn-pill btn-pill-gray-100">Gray 100</button>
+			<button class="btn-pill btn-pill-gray-200">Gray 200</button>
+			<button class="btn-pill btn-pill-gray-300">Gray 300</button>
+			<button class="btn-pill btn-pill-gray-400">Gray 400</button>
+			<button class="btn-pill btn-pill-gray-500">Gray 500</button>
+			<button class="btn-pill btn-pill-gray-600">Gray 600</button>
+			<button class="btn-pill btn-pill-gray-700">Gray 700</button>
+			<button class="btn-pill btn-pill-gray-800">Gray 800</button>
+			<button class="btn-pill btn-pill-gray-900">Gray 900</button>
+		</div>
+
+		<h4 class="ds-card__h4">Use Cases</h4>
+		<div class="ds-demo" style="flex-direction: column; gap: 16px;">
+			<div style="display: flex; gap: 8px; align-items: center;">
+				<button class="btn-pill btn-pill-gray-900 btn-pill-sm">Primary Action</button>
+				<button class="btn-pill btn-pill-gray-300 btn-pill-sm">Secondary</button>
+				<button class="btn-pill btn-pill-gray-100 btn-pill-sm">Tertiary</button>
+				<span style="font-size: 11px; color: #999; margin-left: 8px;">Action hierarchy</span>
+			</div>
+			<div style="display: flex; gap: 4px; align-items: center;">
+				<button class="btn-pill btn-pill-gray-800 btn-pill-xs">Active</button>
+				<button class="btn-pill btn-pill-gray-400 btn-pill-xs">Visited</button>
+				<button class="btn-pill btn-pill-gray-200 btn-pill-xs">Default</button>
+				<span style="font-size: 11px; color: #999; margin-left: 8px;">State progression</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="ds-divider"></div>
+
+	<!-- ═══ SHAPE SYSTEM REFERENCE ═══ -->
+	<div class="ds-card">
+		<h3 class="ds-card__title">Shape System Reference</h3>
+		<p class="ds-card__sub">Four shape families, each for a different context. Shape communicates hierarchy and density.</p>
 
 		<table class="ds-table">
 			<thead>
 				<tr>
 					<th>Shape</th>
-					<th>Use For</th>
-					<th>Border Radius</th>
+					<th>Class</th>
+					<th>Radius</th>
+					<th>Best For</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
+					<td><strong>Full Radius</strong></td>
 					<td><code>.btn-pill</code></td>
-					<td>Primary CTAs, hero actions, main navigation, onboarding flows</td>
-					<td>9999px (full pill)</td>
+					<td>9999px</td>
+					<td>Primary CTAs, hero actions, navigation, onboarding</td>
 				</tr>
 				<tr>
+					<td><strong>Standard Radius</strong></td>
 					<td><code>.btn-rounded</code></td>
-					<td>Forms, settings panels, cards, inline actions, dialog footers</td>
 					<td>8px</td>
+					<td>Forms, settings, cards, inline actions, dialog footers</td>
 				</tr>
 				<tr>
+					<td><strong>Tight Radius</strong></td>
 					<td><code>.btn-compact</code></td>
-					<td>Toolbars, data tables, badge-style actions, dense UIs</td>
 					<td>6px</td>
+					<td>Toolbars, data tables, badge-style actions, dense UIs</td>
+				</tr>
+				<tr>
+					<td><strong>Glassmorphic</strong></td>
+					<td><code>.btn-glass</code></td>
+					<td>Inherits</td>
+					<td>Overlays, hero sections, dark/image backgrounds, glass surfaces</td>
 				</tr>
 			</tbody>
 		</table>
@@ -554,6 +697,10 @@
 			<div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
 				<button class="btn-compact btn-compact-primary">Save</button>
 				<span style="font-size: 11px; color: #999;">.btn-compact — toolbar</span>
+			</div>
+			<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; background: linear-gradient(135deg, #111, #1a1a2e); padding: 16px 20px; border-radius: 12px;">
+				<button class="btn-glass btn-glass-pill btn-glass-accent btn-glass-sm">Save Changes</button>
+				<span style="font-size: 11px; color: #666;">.btn-glass — overlay</span>
 			</div>
 		</div>
 	</div>

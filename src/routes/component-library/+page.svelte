@@ -11,19 +11,32 @@
 	import Shadows from './sections/Shadows.svelte';
 	import Buttons from './sections/Buttons.svelte';
 	import Inputs from './sections/Inputs.svelte';
+	import FormControls from './sections/FormControls.svelte';
+	import Selects from './sections/Selects.svelte';
+	import Sliders from './sections/Sliders.svelte';
 	import Badges from './sections/Badges.svelte';
+	import Avatars from './sections/Avatars.svelte';
 	import Cards from './sections/Cards.svelte';
+	import Accordions from './sections/Accordions.svelte';
+	import Tables from './sections/Tables.svelte';
 	import Navigation from './sections/Navigation.svelte';
 	import TabsSection from './sections/TabsSection.svelte';
 	import Menus from './sections/Menus.svelte';
 	import Dialogs from './sections/Dialogs.svelte';
 	import Tooltips from './sections/Tooltips.svelte';
+	import Alerts from './sections/Alerts.svelte';
+	import Toasts from './sections/Toasts.svelte';
+	import ProgressBars from './sections/ProgressBars.svelte';
 	import Feedback from './sections/Feedback.svelte';
 	import Messages from './sections/Messages.svelte';
 	import DataDisplay from './sections/DataDisplay.svelte';
 	import AiChat from './sections/AiChat.svelte';
 	import AiElements from './sections/AiElements.svelte';
+	import Forms from './sections/Forms.svelte';
+	import Layouts from './sections/Layouts.svelte';
 	import Animations from './sections/Animations.svelte';
+	import EmptyStates from './sections/EmptyStates.svelte';
+	import ErrorStates from './sections/ErrorStates.svelte';
 	import Modules from './sections/Modules.svelte';
 
 	let activeSection = $state('overview');
@@ -33,33 +46,56 @@
 		{ label: 'Getting Started', items: [
 			{ id: 'overview', label: 'Overview' },
 		]},
-		{ label: 'Foundation', items: [
+		{ label: 'Design Tokens', items: [
 			{ id: 'colors', label: 'Colors' },
 			{ id: 'typography', label: 'Typography' },
 			{ id: 'icons', label: 'Icons' },
 			{ id: 'spacing', label: 'Spacing & Radius' },
 			{ id: 'shadows', label: 'Shadows & Glass' },
 		]},
-		{ label: 'Components', items: [
+		{ label: 'Actions', items: [
 			{ id: 'buttons', label: 'Buttons' },
-			{ id: 'inputs', label: 'Inputs' },
+		]},
+		{ label: 'Inputs & Forms', items: [
+			{ id: 'inputs', label: 'Text Inputs' },
+			{ id: 'form-controls', label: 'Toggle / Check / Radio' },
+			{ id: 'selects', label: 'Select & Dropdown' },
+			{ id: 'sliders', label: 'Sliders & Range' },
+			{ id: 'forms', label: 'Form Patterns' },
+		]},
+		{ label: 'Data Display', items: [
 			{ id: 'badges', label: 'Badges & Tags' },
+			{ id: 'avatars', label: 'Avatars' },
 			{ id: 'cards', label: 'Cards & Panels' },
-			{ id: 'navigation', label: 'Navigation' },
+			{ id: 'tables', label: 'Tables' },
+			{ id: 'accordions', label: 'Accordions' },
+			{ id: 'data-display', label: 'Lists & Stats' },
+		]},
+		{ label: 'Navigation', items: [
+			{ id: 'navigation', label: 'Nav & Breadcrumbs' },
 			{ id: 'tabs', label: 'Tabs' },
-			{ id: 'menus', label: 'Menus' },
-			{ id: 'dialogs', label: 'Dialogs' },
-			{ id: 'tooltips', label: 'Tooltips' },
-			{ id: 'feedback', label: 'Feedback' },
+			{ id: 'menus', label: 'Menus & Dropdowns' },
+		]},
+		{ label: 'Overlays', items: [
+			{ id: 'dialogs', label: 'Dialogs & Modals' },
+			{ id: 'tooltips', label: 'Tooltips & Popovers' },
+			{ id: 'alerts', label: 'Alerts & Banners' },
+			{ id: 'toasts', label: 'Toast Notifications' },
+		]},
+		{ label: 'Feedback', items: [
+			{ id: 'progress', label: 'Progress Bars' },
+			{ id: 'feedback', label: 'Spinners & Skeletons' },
 			{ id: 'messages', label: 'Messages' },
-			{ id: 'data-display', label: 'Data Display' },
 		]},
 		{ label: 'AI & Chat', items: [
 			{ id: 'ai-chat', label: 'Chat Interface' },
 			{ id: 'ai-elements', label: 'AI Primitives' },
 		]},
 		{ label: 'Patterns', items: [
+			{ id: 'layouts', label: 'Layouts' },
 			{ id: 'animations', label: 'Animations' },
+			{ id: 'empty-states', label: 'Empty States' },
+			{ id: 'error-states', label: 'Error States' },
 			{ id: 'modules', label: 'Module Inventory' },
 		]},
 	];
@@ -78,19 +114,32 @@
 		'shadows': Shadows,
 		'buttons': Buttons,
 		'inputs': Inputs,
+		'form-controls': FormControls,
+		'selects': Selects,
+		'sliders': Sliders,
+		'forms': Forms,
 		'badges': Badges,
+		'avatars': Avatars,
 		'cards': Cards,
+		'tables': Tables,
+		'accordions': Accordions,
+		'data-display': DataDisplay,
 		'navigation': Navigation,
 		'tabs': TabsSection,
 		'menus': Menus,
 		'dialogs': Dialogs,
 		'tooltips': Tooltips,
+		'alerts': Alerts,
+		'toasts': Toasts,
+		'progress': ProgressBars,
 		'feedback': Feedback,
 		'messages': Messages,
-		'data-display': DataDisplay,
 		'ai-chat': AiChat,
 		'ai-elements': AiElements,
+		'layouts': Layouts,
 		'animations': Animations,
+		'empty-states': EmptyStates,
+		'error-states': ErrorStates,
 		'modules': Modules,
 	};
 </script>
