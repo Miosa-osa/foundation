@@ -19,6 +19,7 @@
 	}
 
 	let {
+		value = $bindable(''),
 		status = 'default',
 		size = 'default',
 		class: className = '',
@@ -45,6 +46,7 @@
 			data-size={size}
 			data-has-prefix={prefix ? true : undefined}
 			data-has-suffix={suffix ? true : undefined}
+			bind:value
 			{...restProps}
 		/>
 
@@ -59,6 +61,7 @@
 		class="bos-input {className}"
 		data-status={status}
 		data-size={size}
+		bind:value
 		{...restProps}
 	/>
 {/if}

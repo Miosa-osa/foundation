@@ -32,15 +32,46 @@
 	}
 
 	function renderContent(text: string) {
-		return text
+		// Apply inline formatting first
+		const inlined = text
 			.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
 			.replace(/\*(.*?)\*/g, '<em>$1</em>')
 			.replace(/`([^`]+)`/g, '<code class="assistant-msg__inline-code">$1</code>')
 			.replace(/^### (.*$)/gm, '<h3 class="assistant-msg__h3">$1</h3>')
 			.replace(/^## (.*$)/gm, '<h2 class="assistant-msg__h2">$1</h2>')
-			.replace(/^# (.*$)/gm, '<h1 class="assistant-msg__h1">$1</h1>')
-			.replace(/^- (.*$)/gm, '<li class="assistant-msg__li">$1</li>')
-			.replace(/^\d+\. (.*$)/gm, '<li class="assistant-msg__li assistant-msg__li--ordered">$1</li>');
+			.replace(/^# (.*$)/gm, '<h1 class="assistant-msg__h1">$1</h1>');
+
+		// Wrap consecutive bullet list items in <ul>
+		const withUl = inlined.replace(
+			/((?:^- .*$\n?)+)/gm,
+			(match) => {
+				const items = match.trim().split('\n').map(line =>
+					`<li class="assistant-msg__li">${line.replace(/^- /, '')}</li>`
+				).join('');
+				return `<ul class="assistant-msg__ul">${items}</ul>`;
+			}
+		);
+
+		// Wrap consecutive ordered list items in <ol>
+		const withOl = withUl.replace(
+			/((?:^\d+\. .*$\n?)+)/gm,
+			(match) => {
+				const items = match.trim().split('\n').map(line =>
+					`<li class="assistant-msg__li assistant-msg__li--ordered">${line.replace(/^\d+\. /, '')}</li>`
+				).join('');
+				return `<ol class="assistant-msg__ol">${items}</ol>`;
+			}
+		);
+
+		// Wrap remaining plain text lines in <p> tags, skip already-tagged lines
+		return withOl
+			.split('\n')
+			.map(line => {
+				if (!line.trim()) return '';
+				if (/^<[a-z]/.test(line.trim())) return line;
+				return `<p class="assistant-msg__p">${line}</p>`;
+			})
+			.join('\n');
 	}
 </script>
 
@@ -260,10 +291,31 @@
 	.assistant-msg__content :global(.assistant-msg__h2) { font-size: 16px; }
 	.assistant-msg__content :global(.assistant-msg__h3) { font-size: 15px; }
 
-	.assistant-msg__content :global(.assistant-msg__li) {
-		margin-left: 16px;
+	.assistant-msg__content :global(.assistant-msg__p) {
+		margin: 0 0 8px;
+	}
+
+	.assistant-msg__content :global(.assistant-msg__p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.assistant-msg__content :global(.assistant-msg__ul),
+	.assistant-msg__content :global(.assistant-msg__ol) {
+		margin: 4px 0 8px;
+		padding-left: 20px;
+	}
+
+	.assistant-msg__content :global(.assistant-msg__ul) {
 		list-style: disc;
-		padding-left: 4px;
+	}
+
+	.assistant-msg__content :global(.assistant-msg__ol) {
+		list-style: decimal;
+	}
+
+	.assistant-msg__content :global(.assistant-msg__li) {
+		margin-bottom: 2px;
+		padding-left: 2px;
 	}
 
 	.assistant-msg__content :global(.assistant-msg__li--ordered) {

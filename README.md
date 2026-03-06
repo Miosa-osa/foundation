@@ -1,8 +1,36 @@
 # MIOSA Foundation
 
-**Component Library & Design System for MIOSA-powered applications.**
+**The component library for building your Optimal System.**
 
-Dark monochrome aesthetic. Glassmorphism surfaces. Four button shape systems. Built with Svelte 5 + TypeScript.
+120+ production-ready components. Pure CSS. Zero cognitive load. Built in Svelte for speed and simplicity — designed to get out of your way so you can ship.
+
+---
+
+## What is this?
+
+MIOSA Foundation is the design system behind every product in the MIOSA ecosystem — BusinessOS, ContentOS, DevOS, OSA Terminal, and whatever you build next.
+
+It is a collection of every UI pattern you need, designed once, correctly, so you never have to think about it again. Every component follows the same styling language: dark monochrome gradients, glassmorphic surfaces with real `backdrop-filter: blur(20px)`, pill-shaped interactions, and a gray spectrum that gives you hierarchy without reaching for color.
+
+The goal is to reduce cognitive load — for you as the developer and for the people using what you build.
+
+Everything here is pure CSS with HTML structure. No proprietary runtime. No vendor lock-in. Copy the classes, paste them into your app, set the design tokens, and it works.
+
+---
+
+## Why Svelte, not React?
+
+This is a design system, not an application framework. The job is to define CSS patterns and HTML structures that any team can extract and use.
+
+**No runtime overhead.** Svelte compiles to vanilla JS. There is no virtual DOM, no reconciler, no 40KB runtime sitting between your CSS and the browser. The components in this library are thin wrappers around CSS — that is what a design system should be.
+
+**CSS stays CSS.** React pushes you toward CSS-in-JS, styled-components, or Tailwind-only approaches because scoping is hard without a compiler. Svelte gives you real scoped `<style>` blocks that compile to plain CSS. Every pattern in this library is extractable as raw CSS — no JSX translation needed.
+
+**Simpler state for demos.** Interactive demos need local state. In Svelte that is `let count = $state(0)`. In React that is `const [count, setCount] = useState(0)` plus hook rules, dependency arrays, and re-render gotchas. For a library of 120+ interactive demos, the simpler model matters.
+
+**Framework-agnostic output.** The output of this library is CSS classes and HTML structure — not React components. You can use these patterns in React, Vue, Angular, plain HTML, or anything else. Building the demos in React would tempt people to import React components directly. Building in Svelte makes it clear: copy the CSS, adapt the markup, use it anywhere.
+
+**Build speed.** The full library builds in under 2 seconds. SvelteKit's Vite integration means HMR is instant. When you are iterating on 120+ component demos, build speed is not a nice-to-have — it is the difference between flow state and frustration.
 
 ---
 
@@ -13,13 +41,12 @@ git clone https://github.com/Miosa-osa/foundation.git
 cd foundation
 npm install
 npm run dev
-# Open http://localhost:5173 (auto-redirects to /component-library)
 ```
 
-### Available Scripts
+Open `http://localhost:5174` — the dev server redirects automatically to `/component-library`.
 
 ```bash
-npm run dev       # Start dev server with HMR
+npm run dev       # Development server with HMR
 npm run build     # Production build
 npm run preview   # Preview production build
 npm run check     # TypeScript + Svelte type checking
@@ -27,230 +54,212 @@ npm run check     # TypeScript + Svelte type checking
 
 ---
 
-## What's Inside
+## Button System
 
-### Design Tokens
-- **Colors** — Monochrome palette, semantic colors, gradients
-- **Typography** — Inter for UI, SF Mono for code. Full type scale with weights and spacing
-- **Spacing** — 4px base unit, 9-step scale
-- **Shadows** — 5-level elevation system
-- **Border Radius** — From 4px badges to 9999px full-radius
-
-### 27 UI Components (`$lib/ui/`)
-
-| Component | Description |
-|-----------|-------------|
-| **Button** | Primary, secondary, plain, error, success variants with 3 sizes |
-| **Input** | Text input with status states, icon slots, prefix/suffix |
-| **Textarea** | Multi-line input with resize control, character count |
-| **Toggle** | On/off switch with 3 sizes |
-| **Checkbox** | Styled checkbox with indeterminate state |
-| **RadioGroup / RadioItem** | Radio button group with context |
-| **Select** | Dropdown select with Bits UI primitives |
-| **Slider** | Range input with custom track and thumb |
-| **Avatar / AvatarGroup** | User avatars with fallback initials, stacked groups |
-| **Alert** | Dismissible banners with 4 severity levels |
-| **Progress** | Linear progress bars |
-| **Toast / Toaster** | Notification system with variants |
-| **Table / TableHeader / TableRow / TableCell** | Data tables with striped, hoverable, compact options |
-| **Accordion / AccordionItem** | Collapsible content sections |
-| **Breadcrumb / BreadcrumbItem** | Navigation breadcrumbs |
-| **Modal** | Dialog overlay with 5 sizes |
-| **Tabs / TabsList / TabsTrigger / TabsContent** | Tab navigation |
-| **Menu / MenuItem / MenuSeparator** | Dropdown menus |
-| **Tooltip** | Contextual hints with keyboard shortcut support |
-| **Popover** | Rich floating content |
-| **Loading** | Spinner component |
-| **Skeleton** | Content placeholder |
-| **Separator** | Visual divider |
-| **ScrollArea** | Custom scrollbar container |
-
-### Button Shape Systems
-
-Four shape families for different contexts:
+Four shape families, each for a different context. Every BOS module uses these — no custom button CSS.
 
 | Shape | Class | Radius | Best For |
 |-------|-------|--------|----------|
-| **Full Radius** | `.btn-pill` | 9999px | Hero CTAs, primary actions, navigation |
-| **Standard Radius** | `.btn-rounded` | 8px | Forms, settings, cards, inline actions |
-| **Tight Radius** | `.btn-compact` | 6px | Toolbars, data tables, dense UIs |
-| **Glassmorphic** | `.btn-glass` | Inherits | Overlays, dark backgrounds, glass surfaces |
+| **Full Radius** | `.btn-pill` | 9999px | Primary CTAs, hero actions, onboarding |
+| **Standard** | `.btn-rounded` | 8px | Forms, settings, cards, dialog footers |
+| **Compact** | `.btn-compact` | 6px | Toolbars, data tables, dense UIs |
+| **Glass** | `.btn-glass` | Inherits | Overlays, dark backgrounds, glass surfaces |
 
-**Full Radius variants:** primary, secondary, ghost, outline, soft, danger, success, warning, link, loading
-**Full Radius sizes:** xs, sm, default, lg, xl + icon-only + block (full-width) + groups
-**Glass variants:** light, dark, frosted, subtle, accent (combine with any shape)
-**Gray spectrum:** `.btn-pill-gray-100` through `.btn-pill-gray-900` — 9 monochrome shades
+Each shape has the same variant scale:
 
-### Chat Components (`$lib/components/chat/`)
-25 Svelte components for AI conversation interfaces including UserMessage, AssistantMessage, ThinkingPanel, TypingIndicator, EmptyState, ChatInput, and more.
+- **Solid**: `primary`, `secondary`, `ghost`, `outline`, `soft`
+- **Semantic**: `danger`, `success`, `warning`
+- **Glass**: `light`, `dark`, `frosted`, `subtle`, `accent`
+- **Monochrome**: `gray-100` through `gray-900`
+- **Sizes**: `xs`, `sm`, (default), `lg`, `xl`
+- **Modifiers**: `icon`, `loading`, `block`
 
-### AI Elements (`$lib/components/ai-elements/`)
-8 components: CodeBlock, Loader, PromptInput, Suggestion, Artifact.
+```html
+<!-- Hero CTA -->
+<button class="btn-pill btn-pill-primary btn-pill-lg">Get Started</button>
 
----
+<!-- Form save -->
+<button class="btn-rounded btn-rounded-primary">Save Changes</button>
 
-## Component Library (48 Sections)
+<!-- Toolbar action -->
+<button class="btn-compact btn-compact-ghost btn-compact-icon">...</button>
 
-The interactive component library lives at `/component-library` with live demos for every component:
-
-```
-src/routes/component-library/
-  +page.svelte          # Shell (sidebar + dynamic section rendering)
-  +page.ts              # SSR disabled
-  styles.css            # Shared layout styles
-  sections/             # 48 section files
-
-Getting Started:
-  Overview.svelte
-
-Design Tokens:
-  Colors.svelte         Typography.svelte       Icons.svelte
-  Spacing.svelte        Shadows.svelte
-
-Actions:
-  Buttons.svelte        ToggleGroups.svelte
-
-Inputs & Forms:
-  Inputs.svelte         FormControls.svelte     Selects.svelte
-  Sliders.svelte        TagInput.svelte         Labels.svelte
-  Forms.svelte
-
-Data Display:
-  Badges.svelte         Avatars.svelte          Cards.svelte
-  Tables.svelte         Accordions.svelte       Collapsibles.svelte
-  DataDisplay.svelte    Timeline.svelte         Carousel.svelte
-  Keyboard.svelte
-
-Navigation:
-  Navigation.svelte     TabsSection.svelte      Menus.svelte
-  ContextMenus.svelte   Pagination.svelte       Stepper.svelte
-  CommandPalette.svelte
-
-Overlays:
-  Dialogs.svelte        Drawers.svelte          Tooltips.svelte
-  HoverCards.svelte     Alerts.svelte           Toasts.svelte
-
-Feedback:
-  ProgressBars.svelte   Feedback.svelte         Messages.svelte
-
-AI & Chat:
-  AiChat.svelte         AiElements.svelte
-
-Patterns:
-  Layouts.svelte        Animations.svelte       EmptyStates.svelte
-  ErrorStates.svelte    Modules.svelte
+<!-- Glass on dark surface -->
+<button class="btn-glass btn-glass-pill btn-glass-accent">New Project</button>
 ```
 
 ---
 
-## Design Principles
+## Design Tokens
 
-**Dark Monochrome** — Black-to-dark gradients as primary. Clean whites, generous whitespace. Contrast through weight, not color.
+Set 9 CSS custom properties and the entire library adapts:
 
-**Glassmorphism** — Frosted glass surfaces with `backdrop-filter: blur`. Subtle borders and inner glow. Layered depth through transparency.
+```css
+:root {
+  --dt:   #111;      /* primary text */
+  --dt2:  #555;      /* secondary text */
+  --dt3:  #888;      /* tertiary text */
+  --dt4:  #bbb;      /* quaternary text */
+  --dbg:  #fff;      /* base background */
+  --dbg2: #f5f5f5;   /* surface */
+  --dbg3: #eee;      /* elevated surface */
+  --dbd:  #e0e0e0;   /* primary border */
+  --dbd2: #f0f0f0;   /* subtle border */
+}
 
-**Shape System** — Four radius families (full, standard, tight, glass) instead of one-size-fits-all. Shape communicates hierarchy and context.
+.dark {
+  --dt:   #fff;
+  --dt2:  #aaa;
+  --dt3:  #777;
+  --dt4:  #555;
+  --dbg:  #1a1a1a;
+  --dbg2: #242424;
+  --dbg3: #2e2e2e;
+  --dbd:  #333;
+  --dbd2: #2a2a2a;
+}
+```
 
-**Simple to Complex** — Every section progresses from basic usage to advanced patterns and real-world compositions.
+---
+
+## Component Groups
+
+### Foundation (5)
+Colors, Typography, Icons, Spacing, Shadows
+
+### Actions (4)
+Buttons, Toggle Groups, Chips & Filters, Selection Cards
+
+### Inputs & Forms (10)
+Text Inputs, Toggle/Check/Radio, Select, Combobox, Sliders, Tag Input, Date Picker, File Upload, Labels, Forms
+
+### Data Display (14)
+Badges, Avatars, Cards, Profile Cards, App Cards, Tables, Lists & Stats, Accordions, Collapsibles, Dividers, Timeline, Carousel, Media, File Browser
+
+### Navigation (9)
+Nav, Tabs, Menus, Context Menus, Pagination, Stepper, Command Palette, Search, Keyboard
+
+### Overlays (6)
+Dialogs, Drawers, Tooltips, Hover Cards, Alerts, Toasts
+
+### Feedback & States (6)
+Progress, Loading, Spinners, Messages, Empty States, Error States
+
+### BOS Modules (25+)
+Desktop Dock, Dashboard, Tasks, Team, Knowledge Base, Data Tables, CRM, Calendar, Notifications, Onboarding, Communication Hub, Workspace Manager, Agent Builder, Node Graph, Daily Log, Voice Notes, Profile & Account, App Marketplace, OSA Agent, System Settings, Integration Hub, Terminal, Project Manager, Help Center, and more.
+
+### ContentOS Modules (5)
+Content Management, AI Generation, Character Studio, Batch & Orders, Prompts & Pricing
+
+### DevOS Modules (6)
+AI Dev Workflows, Code Review, Repository Manager, CI/CD Pipeline, Code Quality, Agent Scheduler
+
+### Surfaces & Effects (5)
+Glass Surfaces, Animations, Floating Elements, Animated Borders
+
+### Patterns (6)
+Settings, Auth, Onboarding Flows, Social, Integration Cards, Balance & Credits
+
+### AI (12)
+Conversation, Message, Prompt Input, Model Selector, Reasoning, Suggestions, Attachments, Sources, Tool Calls, Agent Cards, Generation Forms
+
+### Platform (7)
+API Store, Usage Dashboard, Task/Project Cards, Share & Referral, App Publish, Meeting & People, Compute
+
+---
+
+## How to Extract Patterns
+
+Each section file follows this structure:
+
+```svelte
+<section class="ds-section">
+  <div class="ds-card">
+    <h3 class="ds-card__title">Pattern Name</h3>
+    <!-- Demo HTML with prefixed CSS classes -->
+  </div>
+</section>
+
+<style>
+  .prefix-component { ... }
+  .prefix-component__element { ... }
+  .prefix-component--modifier { ... }
+</style>
+```
+
+**To use a pattern:**
+
+1. Find the section in the sidebar
+2. Copy the HTML structure (skip the `ds-card` wrapper — that is library chrome)
+3. Copy the corresponding CSS from the `<style>` block
+4. Paste into your app, set the design tokens, adapt the markup to your framework
+
+**Apply order when building a new app:**
+
+| Order | Tier | What |
+|-------|------|------|
+| 1 | Foundation | Colors, Typography, Spacing, Shadows — always required |
+| 2 | Primitives | Buttons, Inputs, Badges, Avatars — always required |
+| 3 | Patterns | Layouts, Glass, Auth, Settings — as needed |
+| 4 | Modules | Dashboard, Tasks, CRM, Calendar — pick by feature |
+| 5 | AI | Chat, Reasoning, Agent Cards — if the platform has AI |
+| 6 | Platform | API Store, Usage, Billing — if SaaS |
+
+---
+
+## CSS Prefix System
+
+Every section uses a unique 2-3 character CSS prefix. Combine any number of sections in a single app with zero collisions.
+
+| Prefix | Module | Prefix | Module |
+|--------|--------|--------|--------|
+| `dk-` | Desktop & Dock | `ch-` | Communication Hub |
+| `dw-` | Dashboard Widgets | `wm-` | Workspace Manager |
+| `tb-` | Task Board | `ab2-` | Agent Builder |
+| `td-` | Team Directory | `ng-` | Node Graph Editor |
+| `kb-` | Knowledge Base | `dl-` | Daily Log |
+| `dt2-` | Data Tables | `vn-` | Voice Notes |
+| `cr-` | Client CRM | `pa-` | Profile & Account |
+| `cs-` | Calendar & Schedule | `am-` | App Marketplace |
+| `nc-` | Notification Center | `ow-` | Onboarding Wizard |
 
 ---
 
 ## Tech Stack
 
-- **Svelte 5** — Runes (`$state`, `$derived`, `$props`, `$bindable`)
-- **TypeScript** — Strict mode
-- **Bits UI** — Primitives for Dialog, Tooltip, Popover, Menu, Tabs, Select
-- **CSS Custom Properties** — `--bos-v2-*` design token system
-- **Scoped CSS** — BEM-style naming within components
+| Technology | Role |
+|------------|------|
+| Svelte 5 | Component framework with runes (`$state`, `$derived`, `$effect`) |
+| SvelteKit | Application shell, routing, SSR |
+| TypeScript | Strict type checking |
+| CSS Custom Properties | Token system, theming, dark mode |
+| Bits UI | Accessible primitives (Dialog, Tooltip, Menu, Tabs, Select) |
+| Vite | Instant HMR, sub-2s production builds |
+| Tailwind CSS | Utility classes for library chrome |
 
 ---
 
-## Using Components
+## Project Structure
 
-```svelte
-<!-- UI Primitives -->
-<script>
-  import { Button, Input, Modal, Tooltip, Toggle, Checkbox, Select, Slider } from '$lib/ui';
-  import { Menu, MenuItem, MenuSeparator } from '$lib/ui/menu';
-  import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/ui/tabs';
-  import { RadioGroup, RadioItem } from '$lib/ui/radio';
-  import { Table, TableHeader, TableRow, TableCell } from '$lib/ui/table';
-  import { Accordion, AccordionItem } from '$lib/ui/accordion';
-  import { Avatar, AvatarGroup, Alert, Progress, Toast, Toaster } from '$lib/ui';
-</script>
-
-<!-- CSS Classes (global, no import needed) -->
-
-<!-- Full Radius (Pill) -->
-<button class="btn-pill btn-pill-primary btn-pill-sm">Action</button>
-
-<!-- Standard Radius (Rounded) -->
-<button class="btn-rounded btn-rounded-secondary">Settings</button>
-
-<!-- Tight Radius (Compact) -->
-<button class="btn-compact btn-compact-ghost">Edit</button>
-
-<!-- Glassmorphic -->
-<button class="btn-glass btn-glass-pill btn-glass-frosted">Glass Action</button>
-
-<!-- Gray Spectrum -->
-<button class="btn-pill btn-pill-gray-700">Subtle</button>
-
-<!-- Glass Surfaces -->
-<div class="glass-card">Glass surface</div>
 ```
-
----
-
-## CSS Class Reference
-
-### Full Radius (Pill) Buttons
-```
-.btn-pill                    Base (required)
-.btn-pill-primary            Dark monochrome gradient
-.btn-pill-secondary          White/glass with border
-.btn-pill-ghost              Transparent with light border
-.btn-pill-outline            Dark border, fills on hover
-.btn-pill-soft               Subtle gray tint
-.btn-pill-danger/success/warning  Semantic colors
-.btn-pill-xs/sm/lg/xl        Size modifiers
-.btn-pill-icon               Icon-only square
-.btn-pill-loading            Loading spinner state
-.btn-pill-block              Full width
-.btn-pill-group              Segmented control wrapper
-.btn-pill-gray-100 to 900    Monochrome spectrum
-```
-
-### Standard Radius (Rounded) Buttons
-```
-.btn-rounded                 Base (8px radius)
-.btn-rounded-primary/secondary/ghost/danger  Variants
-.btn-rounded-xs/sm/lg        Size modifiers
-.btn-rounded-icon            Icon-only square
-```
-
-### Tight Radius (Compact) Buttons
-```
-.btn-compact                 Base (6px radius, 12px font)
-.btn-compact-primary/secondary/ghost/danger  Variants
-.btn-compact-icon            Icon-only (24x24)
-```
-
-### Glassmorphic Buttons
-```
-.btn-glass                   Base (required, adds backdrop-filter)
-.btn-glass-pill              Full radius shape
-.btn-glass-rounded           Standard radius shape
-.btn-glass-compact           Tight radius shape
-.btn-glass-light/dark/frosted/subtle/accent  Surface variants
-.btn-glass-xs/sm/lg/xl       Size modifiers
-.btn-glass-icon              Icon-only
-```
-
-### Glass & Surfaces
-```
-.glass                       Frosted glass (backdrop-filter: blur)
-.glass-card                  Enhanced glass card
+miosa-foundation/
+├── src/
+│   ├── routes/component-library/
+│   │   ├── +page.svelte          # Shell: sidebar + section rendering
+│   │   ├── registry.json         # Machine-readable component index
+│   │   ├── AGENT-GUIDE.md        # Protocol for adding new sections
+│   │   └── sections/             # 120+ section files in 15 subdirectories
+│   │
+│   └── lib/
+│       ├── ui/                   # 27 Svelte 5 UI primitives
+│       ├── components/chat/      # Chat interface components
+│       ├── components/ai-elements/ # AI display components
+│       └── styles/app.css        # Global styles, buttons, glass, tokens
+│
+├── app.css                       # Design token root + resets
+├── svelte.config.js
+├── vite.config.ts
+└── package.json
 ```
 
 ---

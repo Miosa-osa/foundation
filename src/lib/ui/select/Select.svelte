@@ -85,10 +85,10 @@
 						class="bos-select-item"
 						data-disabled={option.disabled || undefined}
 					>
-						{#snippet child({ props, isSelected })}
-							<div {...props} class="bos-select-item" data-disabled={option.disabled || undefined} data-selected={isSelected || undefined}>
+						{#snippet child({ props, selected })}
+							<div {...props} class="bos-select-item" data-disabled={option.disabled || undefined} data-selected={selected || undefined}>
 								<span class="bos-select-item__check" aria-hidden="true">
-									{#if isSelected}
+									{#if selected}
 										<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
 										</svg>

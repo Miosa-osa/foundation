@@ -50,3 +50,13 @@ export { Breadcrumb, BreadcrumbItem } from "./breadcrumb";
 
 // Disclosure Components
 export { Accordion, AccordionItem } from "./accordion";
+
+// OSA Components (iOS-inspired, token-driven)
+export {
+  PillButton,
+  GlassCard,
+  GradientBackground,
+  RoundedInput,
+  AppCard,
+  ProgressDots,
+} from "./osa";

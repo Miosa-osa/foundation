@@ -134,15 +134,24 @@
 
 	/* Tags */
 	--bos-tag-blue: #e8f4ff;
+	--bos-tag-blue-text: #1a7fd4;
 	--bos-tag-green: #e6f6eb;
+	--bos-tag-green-text: #0e8345;
 	--bos-tag-teal: #e0f5f4;
+	--bos-tag-teal-text: #0d9488;
 	--bos-tag-white: #f5f5f5;
 	--bos-tag-purple: #f3edff;
+	--bos-tag-purple-text: #7c3aed;
 	--bos-tag-red: #ffeded;
+	--bos-tag-red-text: #dc2626;
 	--bos-tag-pink: #fff0f5;
+	--bos-tag-pink-text: #db2777;
 	--bos-tag-yellow: #fefae8;
+	--bos-tag-yellow-text: #b45309;
 	--bos-tag-orange: #fff4e8;
+	--bos-tag-orange-text: #c2410c;
 	--bos-tag-gray: #f5f5f5;
+	--bos-tag-gray-text: #6b7280;
 
 	/* Z-Index */
 	--bos-z-index-modal: 1000;

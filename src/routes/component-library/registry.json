@@ -1,0 +1,2392 @@
+{
+  "$schema": "miosa-foundation/registry/v1",
+  "name": "MIOSA Foundation",
+  "version": "1.0.0",
+  "description": "Component library & design system for MIOSA-powered applications",
+  "framework": "svelte5",
+  "styling": "css-custom-properties",
+  "theme": "dark-first",
+  "tokens": {
+    "description": "CSS custom properties required by all components",
+    "required": {
+      "--dt": "Primary text color",
+      "--dt2": "Secondary text color",
+      "--dt3": "Tertiary text color",
+      "--dt4": "Quaternary text color",
+      "--dbg": "Primary background",
+      "--dbg2": "Surface background",
+      "--dbg3": "Elevated background",
+      "--dbd": "Primary border",
+      "--dbd2": "Subtle border"
+    },
+    "defaults": {
+      "light": {
+        "--dt": "#111",
+        "--dt2": "#555",
+        "--dt3": "#888",
+        "--dt4": "#bbb",
+        "--dbg": "#fff",
+        "--dbg2": "#f5f5f5",
+        "--dbg3": "#eee",
+        "--dbd": "#e0e0e0",
+        "--dbd2": "#f0f0f0"
+      },
+      "dark": {
+        "--dt": "#fff",
+        "--dt2": "#aaa",
+        "--dt3": "#777",
+        "--dt4": "#555",
+        "--dbg": "#1a1a1a",
+        "--dbg2": "#242424",
+        "--dbg3": "#2e2e2e",
+        "--dbd": "#333",
+        "--dbd2": "#2a2a2a"
+      }
+    }
+  },
+  "tiers": {
+    "foundation": {
+      "description": "Design tokens and primitives — always include",
+      "required": true
+    },
+    "primitives": {
+      "description": "Basic UI building blocks — always include",
+      "required": true
+    },
+    "patterns": {
+      "description": "Reusable UI patterns — include as needed",
+      "required": false
+    },
+    "modules": {
+      "description": "Full feature modules — pick based on platform features",
+      "required": false
+    },
+    "ai": {
+      "description": "AI/Chat interface components — include if platform has AI",
+      "required": false
+    },
+    "platform": {
+      "description": "Platform-level features — include for SaaS platforms",
+      "required": false
+    }
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "name": "Overview",
+      "file": "sections/getting-started/Overview.svelte",
+      "group": "Getting Started",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "Library introduction, metrics, architecture overview",
+      "tags": [
+        "docs",
+        "intro"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "colors",
+      "name": "Colors",
+      "file": "sections/foundation/Colors.svelte",
+      "group": "Foundation",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "Color palette, semantic colors, gradients, accessibility contrast",
+      "tags": [
+        "tokens",
+        "colors",
+        "theme"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "color-tokens",
+        "semantic-colors"
+      ]
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "file": "sections/foundation/Typography.svelte",
+      "group": "Foundation",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "Font scale, weights, line heights, font families",
+      "tags": [
+        "tokens",
+        "typography",
+        "fonts"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "type-scale"
+      ]
+    },
+    {
+      "id": "icons",
+      "name": "Icons",
+      "file": "sections/foundation/Icons.svelte",
+      "group": "Foundation",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "Icon library, sizing, coloring conventions",
+      "tags": [
+        "tokens",
+        "icons"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "spacing",
+      "name": "Spacing & Radius",
+      "file": "sections/foundation/Spacing.svelte",
+      "group": "Foundation",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "4px base unit spacing scale, border radius tokens",
+      "tags": [
+        "tokens",
+        "spacing",
+        "radius"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "spacing-scale",
+        "radius-tokens"
+      ]
+    },
+    {
+      "id": "shadows",
+      "name": "Shadows & Elevation",
+      "file": "sections/foundation/Shadows.svelte",
+      "group": "Foundation",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "5-level elevation system with box-shadow tokens",
+      "tags": [
+        "tokens",
+        "shadows",
+        "elevation"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "elevation-system"
+      ]
+    },
+    {
+      "id": "buttons",
+      "name": "Buttons",
+      "file": "sections/actions/Buttons.svelte",
+      "group": "Actions",
+      "tier": "primitives",
+      "cssPrefix": "btn-pill, btn-rounded, btn-compact, btn-glass",
+      "description": "4 shape systems (pill/rounded/compact/glass), 12 variants, 5 sizes, icon buttons, groups, loading states, gray spectrum",
+      "tags": [
+        "buttons",
+        "actions",
+        "interactive"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "button-system"
+      ]
+    },
+    {
+      "id": "toggle-groups",
+      "name": "Toggle Groups",
+      "file": "sections/actions/ToggleGroups.svelte",
+      "group": "Actions",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Toggle button groups, segmented controls, radio-style toggles",
+      "tags": [
+        "toggles",
+        "actions",
+        "groups"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "filter-chips",
+      "name": "Chips & Filters",
+      "file": "sections/patterns/FilterChips.svelte",
+      "group": "Actions",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Chip components, filter pills, multi-select chips, dismissible tags",
+      "tags": [
+        "chips",
+        "filters",
+        "tags"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "selection-cards",
+      "name": "Selection Cards",
+      "file": "sections/surfaces-effects/SelectionCards.svelte",
+      "group": "Actions",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Card-based selection (radio/checkbox behavior), option grids",
+      "tags": [
+        "selection",
+        "cards",
+        "options"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "inputs",
+      "name": "Text Inputs",
+      "file": "sections/inputs-forms/Inputs.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Text inputs with status states, icon slots, prefix/suffix",
+      "tags": [
+        "inputs",
+        "forms",
+        "text"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "form-controls",
+      "name": "Toggle / Check / Radio",
+      "file": "sections/inputs-forms/FormControls.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Toggle switches, checkboxes, radio buttons in multiple sizes",
+      "tags": [
+        "forms",
+        "toggles",
+        "checkboxes",
+        "radio"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "selects",
+      "name": "Select & Dropdown",
+      "file": "sections/inputs-forms/Selects.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Select dropdowns, native and custom styled",
+      "tags": [
+        "forms",
+        "select",
+        "dropdown"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "combobox",
+      "name": "Combobox & Autocomplete",
+      "file": "sections/inputs-forms/Combobox.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Searchable dropdown, autocomplete, filtered results",
+      "tags": [
+        "forms",
+        "combobox",
+        "autocomplete",
+        "search"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "sliders",
+      "name": "Sliders & Range",
+      "file": "sections/inputs-forms/Sliders.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Range sliders, dual-thumb, stepped, with labels",
+      "tags": [
+        "forms",
+        "sliders",
+        "range"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "tag-input",
+      "name": "Tag Input",
+      "file": "sections/inputs-forms/TagInput.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Tag/token input with creation, deletion, suggestions",
+      "tags": [
+        "forms",
+        "tags",
+        "tokens"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "date-picker",
+      "name": "Date & Time Picker",
+      "file": "sections/inputs-forms/DatePicker.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Calendar picker, time input, date range, relative dates",
+      "tags": [
+        "forms",
+        "date",
+        "time",
+        "calendar"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "file-upload",
+      "name": "File Upload",
+      "file": "sections/inputs-forms/FileUpload.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Drop zones, file list, progress, multi-file upload",
+      "tags": [
+        "forms",
+        "upload",
+        "files"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "file-browser",
+      "name": "File Browser",
+      "file": "sections/inputs-forms/FileBrowser.svelte",
+      "group": "Inputs & Forms",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "File/directory tree, grid/list views, file actions",
+      "tags": [
+        "files",
+        "browser",
+        "tree"
+      ],
+      "appliesWhen": "hasFiles"
+    },
+    {
+      "id": "labels",
+      "name": "Labels & Fields",
+      "file": "sections/inputs-forms/Labels.svelte",
+      "group": "Inputs & Forms",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Form labels, required indicators, help text, field groups",
+      "tags": [
+        "forms",
+        "labels"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "forms",
+      "name": "Form Patterns",
+      "file": "sections/inputs-forms/Forms.svelte",
+      "group": "Inputs & Forms",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Complete form layouts, validation, multi-step, inline editing",
+      "tags": [
+        "forms",
+        "patterns",
+        "validation"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "badges",
+      "name": "Badges & Tags",
+      "file": "sections/data-display/Badges.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Status badges, count badges, tag pills, severity indicators",
+      "tags": [
+        "badges",
+        "tags",
+        "status"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "avatars",
+      "name": "Avatars",
+      "file": "sections/data-display/Avatars.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "User avatars, initials fallback, sizes, status dot, groups/stacks",
+      "tags": [
+        "avatars",
+        "users",
+        "images"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "cards",
+      "name": "Cards & Panels",
+      "file": "sections/data-display/Cards.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Card layouts, headers, footers, actions, grid patterns",
+      "tags": [
+        "cards",
+        "panels",
+        "containers"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "profile-cards",
+      "name": "Profile Cards",
+      "file": "sections/data-display/ProfileCards.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "User profile card variations with avatar, details, stats",
+      "tags": [
+        "cards",
+        "profile",
+        "users"
+      ],
+      "appliesWhen": "hasUsers"
+    },
+    {
+      "id": "app-cards",
+      "name": "App Cards",
+      "file": "sections/patterns/AppCards.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Application/service display cards with icons, ratings, install",
+      "tags": [
+        "cards",
+        "apps",
+        "marketplace"
+      ],
+      "appliesWhen": "hasApps"
+    },
+    {
+      "id": "tables",
+      "name": "Tables",
+      "file": "sections/data-display/Tables.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Basic data tables with striped, hoverable, compact styles",
+      "tags": [
+        "tables",
+        "data"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "data-display",
+      "name": "Lists & Stats",
+      "file": "sections/data-display/DataDisplay.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Stat displays, key-value lists, definition lists",
+      "tags": [
+        "stats",
+        "lists",
+        "data"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "accordions",
+      "name": "Accordions",
+      "file": "sections/data-display/Accordions.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Collapsible content sections, FAQ patterns",
+      "tags": [
+        "accordions",
+        "collapsible"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "collapsibles",
+      "name": "Collapsibles",
+      "file": "sections/data-display/Collapsibles.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Inline collapsible content, show more/less",
+      "tags": [
+        "collapsible",
+        "toggle"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "dividers",
+      "name": "Dividers & Separators",
+      "file": "sections/data-display/Dividers.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Horizontal/vertical dividers, labeled separators",
+      "tags": [
+        "dividers",
+        "separators"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "file": "sections/data-display/Timeline.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Chronological timeline, activity feed, connected dots",
+      "tags": [
+        "timeline",
+        "activity",
+        "history"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "carousel",
+      "name": "Carousel",
+      "file": "sections/data-display/Carousel.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Image/content carousel, dots, arrows, auto-play",
+      "tags": [
+        "carousel",
+        "slider",
+        "media"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "media-display",
+      "name": "Media & Images",
+      "file": "sections/data-display/MediaDisplay.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Image galleries, video player, lightbox, aspect ratios",
+      "tags": [
+        "media",
+        "images",
+        "video",
+        "gallery"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "data-tables",
+      "name": "Data Tables",
+      "file": "sections/data-display/DataTables.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Airtable-style table with toolbar/search/sort, 10 column type renderers, advanced filter builder with AND/OR, row expand detail panel, template gallery",
+      "tags": [
+        "tables",
+        "data",
+        "airtable",
+        "filters",
+        "columns"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "keyboard",
+      "name": "Keyboard Shortcuts",
+      "file": "sections/data-display/Keyboard.svelte",
+      "group": "Data Display",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Keyboard shortcut display, key badges, shortcut lists",
+      "tags": [
+        "keyboard",
+        "shortcuts",
+        "a11y"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "navigation",
+      "name": "Nav & Breadcrumbs",
+      "file": "sections/navigation/Navigation.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Navbar, sidebar, breadcrumbs, mobile nav",
+      "tags": [
+        "navigation",
+        "sidebar",
+        "breadcrumbs"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "file": "sections/navigation/TabsSection.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Tab navigation, underline/pill/card variants, vertical tabs",
+      "tags": [
+        "tabs",
+        "navigation"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "menus",
+      "name": "Menus & Dropdowns",
+      "file": "sections/navigation/Menus.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Dropdown menus, nested menus, action menus, separators",
+      "tags": [
+        "menus",
+        "dropdowns",
+        "actions"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "context-menus",
+      "name": "Context Menus",
+      "file": "sections/navigation/ContextMenus.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Right-click context menus, keyboard shortcuts, submenus",
+      "tags": [
+        "context-menu",
+        "right-click"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "file": "sections/navigation/Pagination.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Page navigation, numbered pages, prev/next, load more",
+      "tags": [
+        "pagination",
+        "navigation"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "stepper",
+      "name": "Stepper & Wizard",
+      "file": "sections/navigation/Stepper.svelte",
+      "group": "Navigation",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Step indicators, wizard progress, numbered steps",
+      "tags": [
+        "stepper",
+        "wizard",
+        "progress"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "command-palette",
+      "name": "Command Palette",
+      "file": "sections/navigation/CommandPalette.svelte",
+      "group": "Navigation",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Cmd+K search overlay, command execution, grouped results",
+      "tags": [
+        "command-palette",
+        "search",
+        "keyboard"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "search-patterns",
+      "name": "Search Patterns",
+      "file": "sections/patterns/SearchPatterns.svelte",
+      "group": "Navigation",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Search UIs, filters, result cards, facets, recent searches",
+      "tags": [
+        "search",
+        "filters",
+        "results"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "dialogs",
+      "name": "Dialogs & Modals",
+      "file": "sections/overlays/Dialogs.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Modal dialogs, confirmation, form modals, 5 sizes",
+      "tags": [
+        "dialogs",
+        "modals",
+        "overlays"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "drawers",
+      "name": "Drawers & Sheets",
+      "file": "sections/overlays/Drawers.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Side drawers, bottom sheets, slide-over panels",
+      "tags": [
+        "drawers",
+        "sheets",
+        "panels"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "tooltips",
+      "name": "Tooltips & Popovers",
+      "file": "sections/overlays/Tooltips.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Contextual tooltips, rich popovers, placement options",
+      "tags": [
+        "tooltips",
+        "popovers"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "hover-cards",
+      "name": "Hover Cards",
+      "file": "sections/overlays/HoverCards.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Hover-triggered preview cards, user cards, link previews",
+      "tags": [
+        "hover",
+        "preview",
+        "cards"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "alerts",
+      "name": "Alerts & Banners",
+      "file": "sections/overlays/Alerts.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Alert banners, inline alerts, dismissible, 4 severity levels",
+      "tags": [
+        "alerts",
+        "banners",
+        "feedback"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "toasts",
+      "name": "Toast Notifications",
+      "file": "sections/overlays/Toasts.svelte",
+      "group": "Overlays",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Toast notifications, auto-dismiss, stacked, action buttons",
+      "tags": [
+        "toasts",
+        "notifications",
+        "feedback"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "progress",
+      "name": "Progress Bars",
+      "file": "sections/feedback/ProgressBars.svelte",
+      "group": "Feedback & States",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Linear progress, circular, indeterminate, labeled",
+      "tags": [
+        "progress",
+        "loading"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "loading-patterns",
+      "name": "Loading Patterns",
+      "file": "sections/feedback/LoadingPatterns.svelte",
+      "group": "Feedback & States",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Full-page loading, inline loading, skeleton screens",
+      "tags": [
+        "loading",
+        "skeletons",
+        "spinners"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "feedback",
+      "name": "Spinners & Skeletons",
+      "file": "sections/feedback/Feedback.svelte",
+      "group": "Feedback & States",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Spinner variants, skeleton placeholders, pulse animations",
+      "tags": [
+        "spinners",
+        "skeletons",
+        "loading"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "messages",
+      "name": "Messages",
+      "file": "sections/feedback/Messages.svelte",
+      "group": "Feedback & States",
+      "tier": "primitives",
+      "cssPrefix": null,
+      "description": "Inline messages, success/error/info/warning feedback",
+      "tags": [
+        "messages",
+        "feedback"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "empty-states",
+      "name": "Empty States",
+      "file": "sections/feedback/EmptyStates.svelte",
+      "group": "Feedback & States",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Empty state illustrations, CTAs, first-time experiences",
+      "tags": [
+        "empty",
+        "states",
+        "onboarding"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "error-states",
+      "name": "Error States",
+      "file": "sections/feedback/ErrorStates.svelte",
+      "group": "Feedback & States",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Error pages (404, 500), inline errors, retry patterns",
+      "tags": [
+        "errors",
+        "states",
+        "recovery"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "glass-surfaces",
+      "name": "Glass Surfaces",
+      "file": "sections/surfaces-effects/GlassSurfaces.svelte",
+      "group": "Surfaces & Effects",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Glassmorphism cards, backdrop-blur, frosted surfaces, layered depth",
+      "tags": [
+        "glass",
+        "blur",
+        "surfaces",
+        "glassmorphism"
+      ],
+      "appliesWhen": "always",
+      "provides": [
+        "glass-system"
+      ]
+    },
+    {
+      "id": "floating-elements",
+      "name": "Floating Elements",
+      "file": "sections/surfaces-effects/FloatingElements.svelte",
+      "group": "Surfaces & Effects",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "FABs, floating toolbars, sticky elements, scroll-triggered",
+      "tags": [
+        "floating",
+        "fab",
+        "sticky"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "animations",
+      "name": "Animations",
+      "file": "sections/surfaces-effects/Animations.svelte",
+      "group": "Surfaces & Effects",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Transitions, entrance/exit animations, micro-interactions",
+      "tags": [
+        "animations",
+        "transitions",
+        "motion"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "animated-borders",
+      "name": "Animated Borders & Glow",
+      "file": "sections/surfaces-effects/AnimatedBorders.svelte",
+      "group": "Surfaces & Effects",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Gradient border animations, glow effects, neon borders",
+      "tags": [
+        "borders",
+        "glow",
+        "animations",
+        "neon"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "layouts",
+      "name": "Layouts",
+      "file": "sections/patterns/Layouts.svelte",
+      "group": "Patterns",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Grid systems, flex layouts, responsive patterns, sidebar layouts",
+      "tags": [
+        "layouts",
+        "grid",
+        "flex",
+        "responsive"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "settings-patterns",
+      "name": "Settings Patterns",
+      "file": "sections/patterns/SettingsPatterns.svelte",
+      "group": "Patterns",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Settings panels, preference rows, toggle sections, danger zones",
+      "tags": [
+        "settings",
+        "preferences",
+        "configuration"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "auth-patterns",
+      "name": "Auth Patterns",
+      "file": "sections/patterns/AuthPatterns.svelte",
+      "group": "Patterns",
+      "tier": "patterns",
+      "cssPrefix": null,
+      "description": "Login, signup, forgot password, OAuth, 2FA flows",
+      "tags": [
+        "auth",
+        "login",
+        "signup",
+        "oauth"
+      ],
+      "appliesWhen": "hasAuth"
+    },
+    {
+      "id": "desktop-dock",
+      "name": "Desktop & Dock",
+      "file": "sections/bos-modules/DesktopDock.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "dk-",
+      "description": "OSA pill buttons, macOS-style dock with magnification, 15+ desktop icon style variants, window chrome (traffic lights, minimize/maximize), spotlight search overlay",
+      "tags": [
+        "desktop",
+        "dock",
+        "icons",
+        "window",
+        "spotlight",
+        "pill-buttons"
+      ],
+      "appliesWhen": "hasDesktopShell",
+      "module": "desktop",
+      "provides": [
+        "pill-button-system",
+        "dock-bar",
+        "icon-styles",
+        "window-chrome",
+        "spotlight-search"
+      ]
+    },
+    {
+      "id": "dashboard-widgets",
+      "name": "Dashboard Widgets",
+      "file": "sections/bos-modules/DashboardWidgets.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "dw-",
+      "description": "Metric KPI cards with sparklines, quick action grid, active projects widget, CSS bar chart, today's focus checklist, activity feed timeline, calendar mini widget",
+      "tags": [
+        "dashboard",
+        "widgets",
+        "metrics",
+        "charts",
+        "activity"
+      ],
+      "appliesWhen": "hasDashboard",
+      "module": "dashboard",
+      "provides": [
+        "metric-cards",
+        "quick-actions",
+        "activity-feed",
+        "productivity-chart",
+        "calendar-mini"
+      ]
+    },
+    {
+      "id": "task-board",
+      "name": "Task Board",
+      "file": "sections/bos-modules/TaskBoard.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "tb-",
+      "description": "Kanban board with 4 columns, sortable task list view, task card detail with subtasks/comments/activity, priority badges (5 levels), quick filter bar with view toggle",
+      "tags": [
+        "tasks",
+        "kanban",
+        "board",
+        "list",
+        "priorities"
+      ],
+      "appliesWhen": "hasTasks",
+      "module": "tasks",
+      "provides": [
+        "kanban-board",
+        "task-list",
+        "task-detail",
+        "priority-system",
+        "task-filters"
+      ]
+    },
+    {
+      "id": "project-manager",
+      "name": "Project Manager",
+      "file": "sections/bos-modules/ProjectManager.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "pm-",
+      "description": "Project overview cards, Gantt-style timelines, milestone tracking, project health indicators, team assignment panels",
+      "tags": [
+        "projects",
+        "gantt",
+        "milestones",
+        "planning",
+        "management"
+      ],
+      "appliesWhen": "hasProjects",
+      "module": "projects",
+      "provides": [
+        "project-cards",
+        "project-timeline",
+        "milestone-tracker",
+        "project-health",
+        "team-assignment"
+      ]
+    },
+    {
+      "id": "team-directory",
+      "name": "Team Directory",
+      "file": "sections/bos-modules/TeamDirectory.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "td-",
+      "description": "Team member grid with status badges, 3-level org chart with connectors, member profile slide-over, capacity/workload bars, online status system",
+      "tags": [
+        "team",
+        "directory",
+        "org-chart",
+        "capacity",
+        "profiles"
+      ],
+      "appliesWhen": "hasTeam",
+      "module": "team",
+      "provides": [
+        "team-grid",
+        "org-chart",
+        "member-profile",
+        "capacity-bars",
+        "status-badges"
+      ]
+    },
+    {
+      "id": "knowledge-base",
+      "name": "Knowledge Base",
+      "file": "sections/bos-modules/KnowledgeBase.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "kb-",
+      "description": "Document tree sidebar, block editor (heading/paragraph/code/callout/quote/image/table/checklist), slash command menu, SVG knowledge graph, document properties panel",
+      "tags": [
+        "knowledge",
+        "docs",
+        "editor",
+        "wiki",
+        "graph"
+      ],
+      "appliesWhen": "hasKnowledgeBase",
+      "module": "knowledge",
+      "provides": [
+        "doc-sidebar",
+        "block-editor",
+        "slash-commands",
+        "knowledge-graph",
+        "doc-properties"
+      ]
+    },
+    {
+      "id": "client-crm",
+      "name": "Client CRM",
+      "file": "sections/bos-modules/ClientCRM.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "cr-",
+      "description": "Client contact cards, 6-stage deal pipeline kanban, sortable client table, view switcher (cards/list/pipeline/map), deal detail panel with timeline and files",
+      "tags": [
+        "crm",
+        "clients",
+        "deals",
+        "pipeline",
+        "contacts"
+      ],
+      "appliesWhen": "hasClients",
+      "module": "clients",
+      "provides": [
+        "client-cards",
+        "deal-pipeline",
+        "client-table",
+        "view-switcher",
+        "deal-detail"
+      ]
+    },
+    {
+      "id": "calendar-schedule",
+      "name": "Calendar & Schedule",
+      "file": "sections/bos-modules/CalendarSchedule.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "cs-",
+      "description": "Month calendar grid with navigation, week view with hourly slots, event cards (compact/standard/expanded), upcoming events sidebar, daily log with time slots",
+      "tags": [
+        "calendar",
+        "schedule",
+        "events",
+        "time"
+      ],
+      "appliesWhen": "hasCalendar",
+      "module": "calendar",
+      "provides": [
+        "month-calendar",
+        "week-view",
+        "event-cards",
+        "upcoming-list",
+        "daily-log"
+      ]
+    },
+    {
+      "id": "notification-center",
+      "name": "Notification Center",
+      "file": "sections/bos-modules/NotificationCenter.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "nc-",
+      "description": "Bell dropdown with unread badge, notification items with type icons, 5 notification categories, empty state, settings preference matrix, toast notifications",
+      "tags": [
+        "notifications",
+        "bell",
+        "alerts",
+        "settings"
+      ],
+      "appliesWhen": "hasNotifications",
+      "module": "notifications",
+      "provides": [
+        "bell-dropdown",
+        "notification-items",
+        "notification-types",
+        "notification-settings",
+        "toast-system"
+      ]
+    },
+    {
+      "id": "onboarding-wizard",
+      "name": "Onboarding Wizard",
+      "file": "sections/bos-modules/OnboardingWizard.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ow-",
+      "description": "Conversational onboarding with chat bubbles, selection card grids, progress stepper, typewriter text animation, purple orb, feature tour with spotlight, setup checklist",
+      "tags": [
+        "onboarding",
+        "wizard",
+        "steps",
+        "tour",
+        "setup"
+      ],
+      "appliesWhen": "hasOnboarding",
+      "module": "onboarding",
+      "provides": [
+        "conversational-onboarding",
+        "selection-cards",
+        "progress-steps",
+        "typewriter",
+        "feature-tour",
+        "setup-checklist"
+      ]
+    },
+    {
+      "id": "onboarding-flows",
+      "name": "Onboarding Flows",
+      "file": "sections/bos-modules/OnboardingFlows.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": null,
+      "description": "User onboarding sequences, tooltips, checklists",
+      "tags": [
+        "onboarding",
+        "flows",
+        "guides"
+      ],
+      "appliesWhen": "hasOnboarding"
+    },
+    {
+      "id": "communication-hub",
+      "name": "Communication Hub",
+      "file": "sections/bos-modules/CommunicationHub.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ch-",
+      "description": "Email inbox with compose, chat channels with threads, video call grid, contact quick actions",
+      "tags": [
+        "email",
+        "chat",
+        "channels",
+        "communication",
+        "video"
+      ],
+      "appliesWhen": "hasCommunication",
+      "module": "communication",
+      "provides": [
+        "email-inbox",
+        "email-compose",
+        "chat-channels",
+        "video-call",
+        "contact-actions"
+      ]
+    },
+    {
+      "id": "workspace-manager",
+      "name": "Workspace Manager",
+      "file": "sections/bos-modules/WorkspaceManager.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "wm-",
+      "description": "Workspace switcher dropdown, member management with roles, RBAC permissions matrix, workspace settings, invite modal",
+      "tags": [
+        "workspace",
+        "permissions",
+        "roles",
+        "rbac",
+        "members"
+      ],
+      "appliesWhen": "hasWorkspaces",
+      "module": "workspace",
+      "provides": [
+        "workspace-switcher",
+        "member-management",
+        "permissions-matrix",
+        "workspace-settings",
+        "invite-flow"
+      ]
+    },
+    {
+      "id": "agent-builder",
+      "name": "Agent Builder",
+      "file": "sections/bos-modules/AgentBuilder.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ab2-",
+      "description": "Agent configuration form, preset templates, test sandbox, system prompt editor with variables and version history",
+      "tags": [
+        "agents",
+        "ai",
+        "builder",
+        "prompts",
+        "configuration"
+      ],
+      "appliesWhen": "hasAgents",
+      "module": "agents",
+      "provides": [
+        "agent-cards",
+        "agent-form",
+        "preset-templates",
+        "test-sandbox",
+        "prompt-editor"
+      ]
+    },
+    {
+      "id": "node-graph-editor",
+      "name": "Node Graph Editor",
+      "file": "sections/bos-modules/NodeGraphEditor.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ng-",
+      "description": "Visual node cards with ports, graph canvas with grid, connection lines, node properties panel, node palette, link configuration modal",
+      "tags": [
+        "nodes",
+        "graph",
+        "visual-editor",
+        "workflow",
+        "connections"
+      ],
+      "appliesWhen": "hasNodes",
+      "module": "nodes",
+      "provides": [
+        "node-cards",
+        "graph-canvas",
+        "connection-lines",
+        "node-properties",
+        "node-palette"
+      ]
+    },
+    {
+      "id": "daily-log",
+      "name": "Daily Log",
+      "file": "sections/bos-modules/DailyLog.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "dl-",
+      "description": "Day view with morning/afternoon/evening sections, weekly overview, mood/energy tracker, daily review summary card",
+      "tags": [
+        "daily",
+        "journal",
+        "log",
+        "mood",
+        "planning"
+      ],
+      "appliesWhen": "hasDailyLog",
+      "module": "daily",
+      "provides": [
+        "day-view",
+        "weekly-overview",
+        "mood-tracker",
+        "daily-review"
+      ]
+    },
+    {
+      "id": "voice-notes",
+      "name": "Voice Notes",
+      "file": "sections/bos-modules/VoiceNotes.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "vn-",
+      "description": "Voice recorder with waveform, voice note cards with playback, transcription view with timestamps, voice command indicator",
+      "tags": [
+        "voice",
+        "audio",
+        "recording",
+        "transcription",
+        "speech"
+      ],
+      "appliesWhen": "hasVoice",
+      "module": "voice",
+      "provides": [
+        "voice-recorder",
+        "voice-note-cards",
+        "transcription-view",
+        "voice-command"
+      ]
+    },
+    {
+      "id": "terminal-interface",
+      "name": "Terminal Interface",
+      "file": "sections/bos-modules/TerminalInterface.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "tm-",
+      "description": "Full terminal UI — window chrome with traffic lights, tab bars, split panes, agent CLI output with tool call cards, command output patterns (table / JSON / git log), and a settings panel with font, color scheme, cursor, and opacity controls.",
+      "tags": [
+        "terminal",
+        "cli",
+        "agent",
+        "developer",
+        "monospace",
+        "shell",
+        "split-view",
+        "settings"
+      ],
+      "appliesWhen": "platformHasCLI or agentInterface or developerTools",
+      "module": "terminal",
+      "provides": [
+        "terminal-window",
+        "terminal-tabs",
+        "terminal-split",
+        "command-output",
+        "agent-cli",
+        "terminal-settings"
+      ]
+    },
+    {
+      "id": "profile-account",
+      "name": "Profile & Account",
+      "file": "sections/bos-modules/ProfileAccount.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "pa-",
+      "description": "Profile header with avatar upload, account settings, activity history, billing/subscription management, plan comparison",
+      "tags": [
+        "profile",
+        "account",
+        "settings",
+        "billing",
+        "subscription"
+      ],
+      "appliesWhen": "hasAccounts",
+      "module": "profile",
+      "provides": [
+        "profile-header",
+        "account-settings",
+        "activity-history",
+        "billing-section",
+        "plan-comparison"
+      ]
+    },
+    {
+      "id": "app-marketplace",
+      "name": "App Marketplace",
+      "file": "sections/bos-modules/AppMarketplace.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "am-",
+      "description": "Featured apps banner, app grid with ratings, app detail page with screenshots/reviews, category tabs, installed apps management",
+      "tags": [
+        "apps",
+        "marketplace",
+        "store",
+        "extensions",
+        "install"
+      ],
+      "appliesWhen": "hasAppStore",
+      "module": "appStore",
+      "provides": [
+        "featured-apps",
+        "app-grid",
+        "app-detail",
+        "category-tabs",
+        "installed-apps"
+      ]
+    },
+    {
+      "id": "content-os",
+      "name": "ContentOS",
+      "file": "sections/bos-modules/ContentOS.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "co-",
+      "description": "Content management dashboard, block-based editor, media library, editorial calendar, SEO analytics",
+      "tags": [
+        "cms",
+        "content",
+        "editor",
+        "media",
+        "blog",
+        "seo",
+        "calendar",
+        "publishing"
+      ],
+      "appliesWhen": "hasContentManagement",
+      "module": "contentOS",
+      "provides": [
+        "content-dashboard",
+        "content-editor",
+        "media-library",
+        "content-calendar",
+        "seo-analytics"
+      ]
+    },
+    {
+      "id": "content-os-generation",
+      "name": "ContentOS Generation",
+      "file": "sections/bos-modules/ContentOSGeneration.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "cog-",
+      "description": "AI-powered content generation flows, prompt-to-content pipeline, generation history, content variants",
+      "tags": [
+        "cms",
+        "content",
+        "ai",
+        "generation",
+        "publishing"
+      ],
+      "appliesWhen": "hasContentManagement",
+      "module": "contentOS",
+      "provides": [
+        "content-generation",
+        "generation-history",
+        "content-variants"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Components",
+      "file": "sections/bos-modules/SocialComponents.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": null,
+      "description": "Share buttons, reactions, comments, collaboration UI",
+      "tags": [
+        "social",
+        "sharing",
+        "reactions",
+        "comments"
+      ],
+      "appliesWhen": "always"
+    },
+    {
+      "id": "system-settings",
+      "name": "System Settings",
+      "file": "sections/bos-modules/SystemSettings.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ss-",
+      "description": "Platform-level system configuration panels, admin controls, feature flags, global preferences",
+      "tags": [
+        "settings",
+        "admin",
+        "system",
+        "configuration",
+        "flags"
+      ],
+      "appliesWhen": "hasAdmin",
+      "module": "system",
+      "provides": [
+        "system-config",
+        "admin-controls",
+        "feature-flags",
+        "global-preferences"
+      ]
+    },
+    {
+      "id": "help-center",
+      "name": "Help Center",
+      "file": "sections/bos-modules/HelpCenter.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "hc-",
+      "description": "Help documentation browser, article search, FAQ accordion, support ticket form, guided tours",
+      "tags": [
+        "help",
+        "docs",
+        "support",
+        "faq",
+        "tours"
+      ],
+      "appliesWhen": "hasSupport",
+      "module": "help",
+      "provides": [
+        "help-browser",
+        "article-search",
+        "faq-accordion",
+        "support-form",
+        "guided-tours"
+      ]
+    },
+    {
+      "id": "chat-module",
+      "name": "Chat Module",
+      "file": "sections/bos-modules/ChatModule.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "cm-",
+      "description": "Full BOS chat module — dynamic greeting, empty state with rotating phrases, chat input bar with attachments and @agent mentions, message bubbles (user/assistant/thinking/tool-call), conversation sidebar, focus mode cards, and features overview",
+      "tags": [
+        "chat",
+        "ai",
+        "messaging",
+        "input",
+        "sidebar",
+        "focus",
+        "streaming",
+        "agents"
+      ],
+      "appliesWhen": "hasAiChat",
+      "module": "aiChat",
+      "provides": [
+        "chat-empty-state",
+        "chat-input-bar",
+        "message-bubbles",
+        "thinking-panel",
+        "tool-call-card",
+        "conversation-sidebar",
+        "focus-mode-cards",
+        "chat-features-overview"
+      ]
+    },
+    {
+      "id": "integration-hub",
+      "name": "Integration Hub",
+      "file": "sections/bos-modules/IntegrationHub.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "ih-",
+      "description": "Integration management dashboard, connection status cards, webhook configuration, data sync controls, integration health monitoring",
+      "tags": [
+        "integrations",
+        "webhooks",
+        "connectors",
+        "sync",
+        "api"
+      ],
+      "appliesWhen": "hasIntegrations",
+      "module": "integrations",
+      "provides": [
+        "integration-dashboard",
+        "connection-cards",
+        "webhook-config",
+        "sync-controls",
+        "health-monitor"
+      ]
+    },
+    {
+      "id": "osa-agent",
+      "name": "OSA Agent",
+      "file": "sections/bos-modules/OsaAgent.svelte",
+      "group": "BOS Modules",
+      "tier": "modules",
+      "cssPrefix": "osa-",
+      "description": "OSA agent pill, floating AI assistant overlay, quick action launcher, agent status indicators, contextual AI suggestions",
+      "tags": [
+        "osa",
+        "ai",
+        "agent",
+        "pill",
+        "assistant",
+        "floating"
+      ],
+      "appliesWhen": "hasOsa",
+      "module": "osa",
+      "provides": [
+        "osa-pill",
+        "agent-overlay",
+        "quick-launcher",
+        "agent-status",
+        "contextual-suggestions"
+      ]
+    },
+    {
+      "id": "api-store",
+      "name": "API Store & Browser",
+      "file": "sections/platform/ApiStoreBrowser.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "ab-",
+      "description": "API service catalog, category badges, endpoint documentation, mention picker",
+      "tags": [
+        "api",
+        "store",
+        "documentation",
+        "endpoints"
+      ],
+      "appliesWhen": "hasApiStore"
+    },
+    {
+      "id": "usage-dashboard",
+      "name": "Usage & Credits",
+      "file": "sections/platform/UsageDashboard.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "ud-",
+      "description": "Credit balance pills, usage meters, session history table, plan comparison",
+      "tags": [
+        "usage",
+        "credits",
+        "analytics",
+        "billing"
+      ],
+      "appliesWhen": "hasBilling"
+    },
+    {
+      "id": "usage-analytics",
+      "name": "Usage Analytics",
+      "file": "sections/platform/UsageAnalytics.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "ua-",
+      "description": "Detailed analytics charts, usage breakdowns by feature/user/time, trend graphs, export controls",
+      "tags": [
+        "analytics",
+        "charts",
+        "usage",
+        "trends",
+        "reporting"
+      ],
+      "appliesWhen": "hasBilling"
+    },
+    {
+      "id": "task-projects",
+      "name": "Task & Project Cards",
+      "file": "sections/platform/TaskProjectCards.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "tp-",
+      "description": "Task master panel, folder cards, app search modal, project grid",
+      "tags": [
+        "tasks",
+        "projects",
+        "cards"
+      ],
+      "appliesWhen": "hasProjects"
+    },
+    {
+      "id": "share-referral",
+      "name": "Share & Referral",
+      "file": "sections/platform/ShareReferral.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "sh-",
+      "description": "Share & earn cards, social buttons, referral codes, invite modal",
+      "tags": [
+        "share",
+        "referral",
+        "social",
+        "invite"
+      ],
+      "appliesWhen": "hasReferrals"
+    },
+    {
+      "id": "app-publish",
+      "name": "App Publish Form",
+      "file": "sections/platform/AppPublishForm.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "ap-",
+      "description": "App metadata form, category tags, publish status, version badges",
+      "tags": [
+        "publish",
+        "apps",
+        "forms"
+      ],
+      "appliesWhen": "hasAppStore"
+    },
+    {
+      "id": "integrations",
+      "name": "Integration Cards",
+      "file": "sections/platform/IntegrationCards.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": null,
+      "description": "Third-party integration cards, OAuth connect, status indicators",
+      "tags": [
+        "integrations",
+        "oauth",
+        "connectors"
+      ],
+      "appliesWhen": "hasIntegrations"
+    },
+    {
+      "id": "balance-credits",
+      "name": "Balance & Credits",
+      "file": "sections/platform/BalanceCredits.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": null,
+      "description": "Credit balance display, usage meters, pricing tables",
+      "tags": [
+        "billing",
+        "credits",
+        "pricing"
+      ],
+      "appliesWhen": "hasBilling"
+    },
+    {
+      "id": "compute-usage",
+      "name": "Compute Usage",
+      "file": "sections/platform/ComputeUsage.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "cu-",
+      "description": "Compute resource usage panels, CPU/memory/storage meters, instance management, cost breakdown",
+      "tags": [
+        "compute",
+        "usage",
+        "resources",
+        "infrastructure",
+        "billing"
+      ],
+      "appliesWhen": "hasCompute"
+    },
+    {
+      "id": "meeting-people",
+      "name": "Meeting & People",
+      "file": "sections/platform/MeetingPeopleCards.svelte",
+      "group": "Platform",
+      "tier": "platform",
+      "cssPrefix": "mp-",
+      "description": "Meeting recording cards, video players, contact profiles, reaction bars",
+      "tags": [
+        "meetings",
+        "people",
+        "video",
+        "contacts"
+      ],
+      "appliesWhen": "hasMeetings"
+    },
+    {
+      "id": "ai-conversation",
+      "name": "Conversation",
+      "file": "sections/ai/AiChat.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Full AI conversation interface, message list, threading, context panel",
+      "tags": [
+        "ai",
+        "chat",
+        "conversation"
+      ],
+      "appliesWhen": "hasAiChat",
+      "module": "chat"
+    },
+    {
+      "id": "ai-message",
+      "name": "Message",
+      "file": "sections/ai/MessageDisplay.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Individual AI/user message rendering, markdown, actions",
+      "tags": [
+        "ai",
+        "messages",
+        "rendering"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-prompt-input",
+      "name": "Prompt Input",
+      "file": "sections/ai/ChatInputPatterns.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Chat input with auto-resize, submit, formatting toolbar, suggestions",
+      "tags": [
+        "ai",
+        "input",
+        "prompt"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-model-selector",
+      "name": "Model Selector",
+      "file": "sections/ai/ModelSelector.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "AI model picker, model comparison, capability badges",
+      "tags": [
+        "ai",
+        "models",
+        "selector"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-reasoning",
+      "name": "Reasoning",
+      "file": "sections/ai/Reasoning.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "AI thinking/reasoning display, step-by-step, collapsible thought process",
+      "tags": [
+        "ai",
+        "reasoning",
+        "thinking",
+        "cot"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-suggestions",
+      "name": "Suggestions",
+      "file": "sections/ai/AiSuggestions.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Suggested prompts, follow-up questions, quick replies",
+      "tags": [
+        "ai",
+        "suggestions",
+        "prompts"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-attachments",
+      "name": "Attachments",
+      "file": "sections/ai/Attachments.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "File/document attachments in chat, previews, multi-file",
+      "tags": [
+        "ai",
+        "attachments",
+        "files"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-sources",
+      "name": "Sources & Citations",
+      "file": "sections/ai/AiSources.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Citation cards, source references, RAG results display",
+      "tags": [
+        "ai",
+        "sources",
+        "citations",
+        "rag"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-tool-calls",
+      "name": "Tool Calls",
+      "file": "sections/ai/ToolCallCards.svelte",
+      "group": "AI — Chatbot",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Tool/function call visualization, execution status, results",
+      "tags": [
+        "ai",
+        "tools",
+        "function-calls"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-elements",
+      "name": "Code & Artifacts",
+      "file": "sections/ai/AiElements.svelte",
+      "group": "AI — Code & Display",
+      "tier": "ai",
+      "cssPrefix": null,
+      "description": "Syntax-highlighted code blocks, artifact display, copy button",
+      "tags": [
+        "ai",
+        "code",
+        "artifacts",
+        "syntax"
+      ],
+      "appliesWhen": "hasAiChat"
+    },
+    {
+      "id": "ai-agent-cards",
+      "name": "Agent Cards",
+      "file": "sections/ai/AiAgentCards.svelte",
+      "group": "AI — Agents & Generation",
+      "tier": "ai",
+      "cssPrefix": "ag-",
+      "description": "Agent running/completed cards, phase progress, planning cards, capability selection",
+      "tags": [
+        "ai",
+        "agents",
+        "cards",
+        "status"
+      ],
+      "appliesWhen": "hasAgents"
+    },
+    {
+      "id": "ai-generation",
+      "name": "Generation Forms",
+      "file": "sections/ai/AiGenerationForms.svelte",
+      "group": "AI — Agents & Generation",
+      "tier": "ai",
+      "cssPrefix": "gf-",
+      "description": "Video/image generation forms, aspect ratio pills, duration sliders, processing states",
+      "tags": [
+        "ai",
+        "generation",
+        "forms",
+        "media"
+      ],
+      "appliesWhen": "hasAiGeneration"
+    },
+    {
+      "id": "modules",
+      "name": "Module Inventory",
+      "file": "sections/reference/Modules.svelte",
+      "group": "Reference",
+      "tier": "foundation",
+      "cssPrefix": null,
+      "description": "Complete inventory of underlying component modules",
+      "tags": [
+        "docs",
+        "reference",
+        "inventory"
+      ],
+      "appliesWhen": "always"
+    }
+  ],
+  "moduleMap": {
+    "description": "Maps platform features to component sections. AI agents should read this to determine which sections to apply.",
+    "features": {
+      "desktopShell": {
+        "description": "macOS-style desktop with dock, icons, windows",
+        "sections": [
+          "desktop-dock"
+        ],
+        "cssTokens": [
+          "dk-"
+        ]
+      },
+      "dashboard": {
+        "description": "Main overview dashboard with widgets",
+        "sections": [
+          "dashboard-widgets"
+        ],
+        "cssTokens": [
+          "dw-"
+        ]
+      },
+      "tasks": {
+        "description": "Task management (kanban, list, calendar views)",
+        "sections": [
+          "task-board"
+        ],
+        "cssTokens": [
+          "tb-"
+        ]
+      },
+      "projects": {
+        "description": "Project management, Gantt timelines, milestones",
+        "sections": [
+          "project-manager",
+          "task-projects"
+        ],
+        "cssTokens": [
+          "pm-",
+          "tp-"
+        ]
+      },
+      "team": {
+        "description": "Team directory, org chart, capacity",
+        "sections": [
+          "team-directory"
+        ],
+        "cssTokens": [
+          "td-"
+        ]
+      },
+      "knowledge": {
+        "description": "Knowledge base, wiki, document editor",
+        "sections": [
+          "knowledge-base"
+        ],
+        "cssTokens": [
+          "kb-"
+        ]
+      },
+      "tables": {
+        "description": "Advanced data tables (Airtable-style)",
+        "sections": [
+          "data-tables"
+        ],
+        "cssTokens": [
+          "dt2-"
+        ]
+      },
+      "clients": {
+        "description": "CRM, client management, deal pipeline",
+        "sections": [
+          "client-crm"
+        ],
+        "cssTokens": [
+          "cr-"
+        ]
+      },
+      "calendar": {
+        "description": "Calendar, scheduling, events",
+        "sections": [
+          "calendar-schedule"
+        ],
+        "cssTokens": [
+          "cs-"
+        ]
+      },
+      "notifications": {
+        "description": "Notification center, bell dropdown",
+        "sections": [
+          "notification-center"
+        ],
+        "cssTokens": [
+          "nc-"
+        ]
+      },
+      "onboarding": {
+        "description": "User onboarding, setup wizard",
+        "sections": [
+          "onboarding-wizard",
+          "onboarding-flows"
+        ],
+        "cssTokens": [
+          "ow-"
+        ]
+      },
+      "communication": {
+        "description": "Email, chat channels, video calls",
+        "sections": [
+          "communication-hub"
+        ],
+        "cssTokens": [
+          "ch-"
+        ]
+      },
+      "workspace": {
+        "description": "Multi-workspace, roles, permissions",
+        "sections": [
+          "workspace-manager"
+        ],
+        "cssTokens": [
+          "wm-"
+        ]
+      },
+      "agents": {
+        "description": "AI agent configuration and builder",
+        "sections": [
+          "agent-builder",
+          "ai-agent-cards"
+        ],
+        "cssTokens": [
+          "ab2-",
+          "ag-"
+        ]
+      },
+      "nodes": {
+        "description": "Visual node graph editor",
+        "sections": [
+          "node-graph-editor"
+        ],
+        "cssTokens": [
+          "ng-"
+        ]
+      },
+      "dailyLog": {
+        "description": "Daily journal, mood tracking, planning",
+        "sections": [
+          "daily-log"
+        ],
+        "cssTokens": [
+          "dl-"
+        ]
+      },
+      "voice": {
+        "description": "Voice recording, transcription",
+        "sections": [
+          "voice-notes"
+        ],
+        "cssTokens": [
+          "vn-"
+        ]
+      },
+      "terminal": {
+        "description": "Terminal interface, CLI, agent output",
+        "sections": [
+          "terminal-interface"
+        ],
+        "cssTokens": [
+          "tm-"
+        ]
+      },
+      "profile": {
+        "description": "User profile, account settings, billing",
+        "sections": [
+          "profile-account"
+        ],
+        "cssTokens": [
+          "pa-"
+        ]
+      },
+      "appStore": {
+        "description": "App marketplace, extensions",
+        "sections": [
+          "app-marketplace",
+          "app-publish"
+        ],
+        "cssTokens": [
+          "am-",
+          "ap-"
+        ]
+      },
+      "contentOS": {
+        "description": "Content management, CMS, blog, media, editorial",
+        "sections": [
+          "content-os",
+          "content-os-generation"
+        ],
+        "cssTokens": [
+          "co-",
+          "cog-"
+        ]
+      },
+      "system": {
+        "description": "System-level settings, admin controls, feature flags",
+        "sections": [
+          "system-settings"
+        ],
+        "cssTokens": [
+          "ss-"
+        ]
+      },
+      "help": {
+        "description": "Help center, documentation, support tickets, guided tours",
+        "sections": [
+          "help-center"
+        ],
+        "cssTokens": [
+          "hc-"
+        ]
+      },
+      "integrationHub": {
+        "description": "Integration management, webhooks, data sync, health monitoring",
+        "sections": [
+          "integration-hub",
+          "integrations"
+        ],
+        "cssTokens": [
+          "ih-"
+        ]
+      },
+      "osa": {
+        "description": "OSA agent pill, floating AI assistant overlay",
+        "sections": [
+          "osa-agent"
+        ],
+        "cssTokens": [
+          "osa-"
+        ]
+      },
+      "aiChat": {
+        "description": "AI-powered chat interface",
+        "sections": [
+          "ai-conversation",
+          "ai-message",
+          "ai-prompt-input",
+          "ai-model-selector",
+          "ai-reasoning",
+          "ai-suggestions",
+          "ai-attachments",
+          "ai-sources",
+          "ai-tool-calls",
+          "ai-elements"
+        ],
+        "cssTokens": []
+      },
+      "aiGeneration": {
+        "description": "AI content generation (image, video, audio)",
+        "sections": [
+          "ai-generation"
+        ],
+        "cssTokens": [
+          "gf-"
+        ]
+      },
+      "billing": {
+        "description": "Credits, usage, pricing, subscriptions",
+        "sections": [
+          "usage-dashboard",
+          "usage-analytics",
+          "balance-credits",
+          "compute-usage",
+          "profile-account"
+        ],
+        "cssTokens": [
+          "ud-",
+          "ua-",
+          "cu-"
+        ]
+      },
+      "auth": {
+        "description": "Authentication flows (login, signup, OAuth)",
+        "sections": [
+          "auth-patterns"
+        ],
+        "cssTokens": []
+      },
+      "settings": {
+        "description": "Application settings panels",
+        "sections": [
+          "settings-patterns",
+          "system-settings"
+        ],
+        "cssTokens": [
+          "ss-"
+        ]
+      }
+    }
+  },
+  "applyOrder": [
+    "foundation",
+    "primitives",
+    "patterns",
+    "modules",
+    "ai",
+    "platform"
+  ],
+  "aiInstructions": "To apply this component library to a new codebase: 1) Always include all 'foundation' and 'primitives' tier sections. 2) Read the moduleMap to match platform features to sections. 3) For each matching section, read the .svelte file to extract CSS patterns and HTML structure. 4) Each section uses a unique CSS prefix (cssPrefix field) to avoid conflicts. 5) All sections depend on the design token CSS custom properties defined in the tokens object. 6) Apply sections in tier order: foundation → primitives → patterns → modules → ai → platform."
+}
