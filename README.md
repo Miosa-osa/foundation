@@ -2,7 +2,7 @@
 
 **The component library for building your Optimal System.**
 
-120+ production-ready components. Pure CSS. Zero cognitive load. Built in Svelte for speed and simplicity — designed to get out of your way so you can ship.
+124 production-ready components. Pure CSS. Zero cognitive load. Built in Svelte for speed and simplicity — designed to get out of your way so you can ship.
 
 ---
 
@@ -127,44 +127,41 @@ Set 9 CSS custom properties and the entire library adapts:
 ### Foundation (5)
 Colors, Typography, Icons, Spacing, Shadows
 
-### Actions (4)
-Buttons, Toggle Groups, Chips & Filters, Selection Cards
+### Actions (2)
+Buttons, Toggle Groups
 
-### Inputs & Forms (10)
-Text Inputs, Toggle/Check/Radio, Select, Combobox, Sliders, Tag Input, Date Picker, File Upload, Labels, Forms
+### Inputs & Forms (11)
+Text Inputs, Toggle/Check/Radio, Select, Combobox, Sliders, Tag Input, Date Picker, File Upload, File Browser, Labels, Forms
 
 ### Data Display (14)
-Badges, Avatars, Cards, Profile Cards, App Cards, Tables, Lists & Stats, Accordions, Collapsibles, Dividers, Timeline, Carousel, Media, File Browser
+Badges, Avatars, Cards, Profile Cards, Data Tables, Tables, Lists & Stats, Accordions, Collapsibles, Dividers, Timeline, Carousel, Media, Keyboard
 
-### Navigation (9)
-Nav, Tabs, Menus, Context Menus, Pagination, Stepper, Command Palette, Search, Keyboard
+### Navigation (7)
+Nav, Tabs, Menus, Context Menus, Pagination, Stepper, Command Palette
 
 ### Overlays (6)
 Dialogs, Drawers, Tooltips, Hover Cards, Alerts, Toasts
 
 ### Feedback & States (6)
-Progress, Loading, Spinners, Messages, Empty States, Error States
+Progress, Loading, Messages, Empty States, Error States, Feedback
 
-### BOS Modules (25+)
-Desktop Dock, Dashboard, Tasks, Team, Knowledge Base, Data Tables, CRM, Calendar, Notifications, Onboarding, Communication Hub, Workspace Manager, Agent Builder, Node Graph, Daily Log, Voice Notes, Profile & Account, App Marketplace, OSA Agent, System Settings, Integration Hub, Terminal, Project Manager, Help Center, and more.
-
-### ContentOS Modules (5)
-Content Management, AI Generation, Character Studio, Batch & Orders, Prompts & Pricing
+### BOS Modules (32)
+Desktop Dock, Desktop 3D, Dashboard, Tasks, Team, Knowledge Base, CRM, Calendar, Notifications, Onboarding Wizard, Onboarding Flows, Communication Hub, Chat, Workspace Manager, Agent Builder, Node Graph, Daily Log, Voice Notes, Profile & Account, App Marketplace, OSA Agent, System Settings, Integration Hub, Terminal, Project Manager, Help Center, Social Components, ContentOS, ContentOS Generation, ContentOS Studio, ContentOS Batch, ContentOS Prompts
 
 ### DevOS Modules (6)
 AI Dev Workflows, Code Review, Repository Manager, CI/CD Pipeline, Code Quality, Agent Scheduler
 
 ### Surfaces & Effects (5)
-Glass Surfaces, Animations, Floating Elements, Animated Borders
+Glass Surfaces, Animations, Floating Elements, Animated Borders, Selection Cards
 
 ### Patterns (6)
-Settings, Auth, Onboarding Flows, Social, Integration Cards, Balance & Credits
+Layouts, App Cards, Filter Chips, Auth, Search, Settings
 
 ### AI (12)
-Conversation, Message, Prompt Input, Model Selector, Reasoning, Suggestions, Attachments, Sources, Tool Calls, Agent Cards, Generation Forms
+Conversation, Message Display, Prompt Input, Model Selector, Reasoning, Suggestions, Attachments, Sources, Tool Calls, Agent Cards, AI Elements, Generation Forms
 
-### Platform (7)
-API Store, Usage Dashboard, Task/Project Cards, Share & Referral, App Publish, Meeting & People, Compute
+### Platform (10)
+API Store, Usage Dashboard, Usage Analytics, Task/Project Cards, Share & Referral, App Publish, Meeting & People, Compute, Integration Cards, Balance & Credits
 
 ---
 
@@ -248,14 +245,31 @@ miosa-foundation/
 │   │   ├── +page.svelte          # Shell: sidebar + section rendering
 │   │   ├── registry.json         # Machine-readable component index
 │   │   ├── AGENT-GUIDE.md        # Protocol for adding new sections
-│   │   └── sections/             # 120+ section files in 15 subdirectories
+│   │   └── sections/             # 124 section files in 15 subdirectories
+│   │       ├── getting-started/  # Overview
+│   │       ├── foundation/       # Colors, Typography, Icons, Spacing, Shadows
+│   │       ├── actions/          # Buttons, Toggle Groups
+│   │       ├── inputs-forms/     # Inputs, Selects, Sliders, Date Picker, etc.
+│   │       ├── data-display/     # Badges, Cards, Tables, Accordions, etc.
+│   │       ├── navigation/       # Nav, Tabs, Menus, Pagination, etc.
+│   │       ├── overlays/         # Dialogs, Drawers, Tooltips, Toasts, etc.
+│   │       ├── feedback/         # Progress, Loading, Empty/Error States
+│   │       ├── bos-modules/      # 32 BOS modules (Dashboard, CRM, etc.)
+│   │       ├── devos-modules/    # 6 DevOS modules (CI/CD, Code Review, etc.)
+│   │       ├── ai/              # 12 AI sections (Chat, Reasoning, etc.)
+│   │       ├── surfaces-effects/ # Glass, Animations, Floating Elements
+│   │       ├── patterns/         # Auth, Settings, Layouts, Search
+│   │       ├── platform/         # 10 platform sections (API Store, Usage, etc.)
+│   │       └── reference/        # Module reference
 │   │
 │   └── lib/
-│       ├── ui/                   # 27 Svelte 5 UI primitives
+│       ├── ui/                   # Svelte 5 UI primitives
 │       ├── components/chat/      # Chat interface components
 │       ├── components/ai-elements/ # AI display components
 │       └── styles/app.css        # Global styles, buttons, glass, tokens
 │
+├── SETUP-GUIDE.md                # Agent bootstrap guide for new codebases
+├── CLAUDE.md                     # Agent instructions and module mapping
 ├── app.css                       # Design token root + resets
 ├── svelte.config.js
 ├── vite.config.ts
