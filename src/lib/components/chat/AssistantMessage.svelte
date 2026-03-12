@@ -31,9 +31,20 @@
 		onCopy?.();
 	}
 
+	function escapeHtml(text: string): string {
+		return text
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
+	}
+
 	function renderContent(text: string) {
-		// Apply inline formatting first
-		const inlined = text
+		// Escape all HTML entities first to neutralize any injected markup
+		const escaped = escapeHtml(text);
+
+		// Apply inline formatting on the now-safe escaped string
+		const inlined = escaped
 			.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
 			.replace(/\*(.*?)\*/g, '<em>$1</em>')
 			.replace(/`([^`]+)`/g, '<code class="assistant-msg__inline-code">$1</code>')

@@ -292,7 +292,7 @@ My recommendation: use the built-in sort (Timsort) unless profiling shows it as 
 					<div class="rs-panel__body">
 						{#if deepShowMore}
 							{#each deepFull.split('\n\n') as para}
-								<p class="rs-panel__text">{@html para.replace(/`([^`]+)`/g, '<code class="rs-inline-code">$1</code>')}</p>
+								<p class="rs-panel__text">{@html para.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/`([^`]+)`/g, '<code class="rs-inline-code">$1</code>')}</p>
 							{/each}
 						{:else}
 							{#each deepShort.split('\n\n') as para}

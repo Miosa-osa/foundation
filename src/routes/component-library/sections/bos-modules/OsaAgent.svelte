@@ -109,6 +109,19 @@
 	];
 	const visibilityLevels = ['private', 'workspace', 'public'];
 	const actionTypes = ['function', 'api', 'workflow'];
+
+	function safeFormatMessage(content: string): string {
+		// Escape HTML entities first to neutralize any injected markup
+		const escaped = content
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
+		// Then apply safe formatting
+		return escaped
+			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+			.replace(/\n/g, '<br>');
+	}
 </script>
 
 <section class="ds-section">
@@ -326,7 +339,7 @@
 									<span class="oa-stream__text">{msg.content}</span>
 									<span class="oa-stream__cursor" aria-hidden="true"></span>
 								{:else}
-									{@html msg.content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')}
+									{@html safeFormatMessage(msg.content)}
 								{/if}
 							</div>
 						</div>
