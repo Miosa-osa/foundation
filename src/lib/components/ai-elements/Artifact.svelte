@@ -2,6 +2,7 @@
 	import { fly, slide } from 'svelte/transition';
 	import type { Snippet } from 'svelte';
 	import CodeBlock from './CodeBlock.svelte';
+	import { sanitizeHtml } from '$lib/utils/sanitize';
 
 	interface Props {
 		title?: string;
@@ -120,7 +121,7 @@
 				<CodeBlock code={content} {language} showLineNumbers={true} />
 			{:else if type === 'html'}
 				<div class="ai-artifact__html-preview">
-					{@html content}
+					{@html sanitizeHtml(content)}
 				</div>
 			{:else}
 				<div class="ai-artifact__text">
