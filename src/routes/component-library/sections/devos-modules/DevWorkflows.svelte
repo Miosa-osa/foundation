@@ -237,7 +237,7 @@
 										id="dwf-webhook-{wf.id}"
 										class="dwf-input dwf-input--mono"
 										type="text"
-										value="https://hooks.miosa.io/wf/{wf.id}"
+										value="https://hooks.miosa.ai/wf/{wf.id}"
 										readonly
 										aria-label="Webhook endpoint URL"
 									/>

@@ -453,7 +453,7 @@
 			<div class="drawer-body">
 				{#if activeSettingsTab === 'general'}
 					<div style="display: flex; flex-direction: column; gap: 20px;">
-						{#each [['Display name', 'R. Moreau'], ['Email address', 'r.moreau@miosa.io'], ['Username', '@rmoreau']] as [label, value]}
+						{#each [['Display name', 'R. Moreau'], ['Email address', 'r.moreau@miosa.ai'], ['Username', '@rmoreau']] as [label, value]}
 							<label style="display: flex; flex-direction: column; gap: 6px;">
 								<span style="font-size: 12px; font-weight: 500; color: var(--dt3);">{label}</span>
 								<input

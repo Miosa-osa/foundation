@@ -125,13 +125,13 @@
 	const trending = ['Design system', 'API reference', 'Onboarding guide', 'Billing', 'Webhooks'];
 	const pageResults: { icon: string; title: string; desc: string; cat: string; time: string }[] = [
 		{ icon: 'page',   title: 'Getting Started with MIOSA',    desc: 'Step-by-step setup for new workspaces.',     cat: 'Docs',    time: '2d ago' },
-		{ icon: 'user',   title: 'Jordan Lee',                    desc: 'Engineering Lead · jordan@miosa.io',         cat: 'People',  time: 'Online' },
+		{ icon: 'user',   title: 'Jordan Lee',                    desc: 'Engineering Lead · jordan@miosa.ai',         cat: 'People',  time: 'Online' },
 		{ icon: 'file',   title: 'Design System v3.pdf',          desc: '3.2 MB · Updated yesterday',                cat: 'Files',   time: 'yesterday' },
 		{ icon: 'page',   title: 'API Authentication Guide',      desc: 'OAuth2 flows and token management.',         cat: 'Docs',    time: '5d ago' },
-		{ icon: 'user',   title: 'Priya Anand',                   desc: 'Product Designer · priya@miosa.io',          cat: 'People',  time: 'Away' },
+		{ icon: 'user',   title: 'Priya Anand',                   desc: 'Product Designer · priya@miosa.ai',          cat: 'People',  time: 'Away' },
 		{ icon: 'file',   title: 'Q4 Roadmap.fig',                desc: '8.4 MB · Figma source',                     cat: 'Files',   time: '3d ago' },
 		{ icon: 'page',   title: 'Billing & Subscriptions',       desc: 'Manage plans, invoices and payments.',       cat: 'Docs',    time: '1w ago' },
-		{ icon: 'user',   title: 'Sam Rivera',                    desc: 'Product Manager · sam@miosa.io',             cat: 'People',  time: 'Offline' },
+		{ icon: 'user',   title: 'Sam Rivera',                    desc: 'Product Manager · sam@miosa.ai',             cat: 'People',  time: 'Offline' },
 	];
 	const filteredPageResults = $derived(
 		pageQuery.trim() === ''

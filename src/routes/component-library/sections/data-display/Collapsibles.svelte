@@ -210,7 +210,7 @@ export const theme = createTheme();`;
 							{#each [
 								['Timeout (ms)', '5000', 'number'],
 								['Max retries', '3', 'number'],
-								['Base URL', 'https://api.miosa.io', 'text'],
+								['Base URL', 'https://api.miosa.ai', 'text'],
 							] as [label, defaultVal, type]}
 								<label style="display: flex; flex-direction: column; gap: 5px;">
 									<span style="font-size: 12px; color: var(--dt2); font-weight: 500;">{label}</span>
