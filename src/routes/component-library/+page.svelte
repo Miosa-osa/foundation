@@ -13,6 +13,7 @@
 	// Dynamic import map — only loads the active section on demand
 	const importMap: Record<string, () => Promise<{ default: Component }>> = {
 		'overview': () => import('./sections/getting-started/Overview.svelte'),
+		'design-reference': () => import('./sections/reference/DesignReference.svelte'),
 		'colors': () => import('./sections/foundation/Colors.svelte'),
 		'typography': () => import('./sections/foundation/Typography.svelte'),
 		'icons': () => import('./sections/foundation/Icons.svelte'),
@@ -173,6 +174,7 @@
 	const sectionGroups = [
 		{ label: 'Getting Started', items: [
 			{ id: 'overview', label: 'Overview' },
+			{ id: 'design-reference', label: 'Design Reference' },
 		]},
 		{ label: 'Foundation', items: [
 			{ id: 'colors', label: 'Colors' },
