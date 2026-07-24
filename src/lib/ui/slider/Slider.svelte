@@ -12,6 +12,7 @@
 		disabled?: boolean;
 		showValue?: boolean;
 		label?: string;
+		id?: string;
 		class?: string;
 	}
 
@@ -23,17 +24,20 @@
 		disabled = false,
 		showValue = false,
 		label,
+		id,
 		class: className = ''
 	}: Props = $props();
 
 	const percentage = $derived(((value - min) / (max - min)) * 100);
+	const generatedId = $props.id();
+	const inputId = $derived(id ?? generatedId);
 </script>
 
 <div class="bos-slider-root {className}" class:bos-slider-root--disabled={disabled}>
 	{#if label || showValue}
 		<div class="bos-slider__header">
 			{#if label}
-				<label class="bos-slider__label">{label}</label>
+				<label class="bos-slider__label" for={inputId}>{label}</label>
 			{/if}
 			{#if showValue}
 				<span class="bos-slider__value">{value}</span>
@@ -45,6 +49,7 @@
 			<div class="bos-slider__fill" style="width: {percentage}%"></div>
 		</div>
 		<input
+			id={inputId}
 			type="range"
 			class="bos-slider__input"
 			bind:value

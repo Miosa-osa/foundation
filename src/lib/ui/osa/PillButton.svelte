@@ -44,12 +44,15 @@
 		class: className = ''
 	}: Props = $props();
 
-	const variantClass = `btn-pill-${variant}`;
-	const sizeClass = size !== 'md' ? `btn-pill-${size}` : '';
-	const blockClass = block ? 'btn-pill-block' : '';
-	const iconClass = iconOnly ? 'btn-pill-icon' : '';
-	const loadingClass = loading ? 'btn-pill-loading' : '';
-	const classes = ['btn-pill', variantClass, sizeClass, blockClass, iconClass, loadingClass, className].filter(Boolean).join(' ');
+	const classes = $derived([
+		'btn-pill',
+		`btn-pill-${variant}`,
+		size !== 'md' ? `btn-pill-${size}` : '',
+		block ? 'btn-pill-block' : '',
+		iconOnly ? 'btn-pill-icon' : '',
+		loading ? 'btn-pill-loading' : '',
+		className
+	].filter(Boolean).join(' '));
 </script>
 
 {#if href}
