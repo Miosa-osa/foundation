@@ -37,16 +37,18 @@
 		}
 	}
 
-	const inputId = $derived(id ?? `toggle-${Math.random().toString(36).slice(2, 8)}`);
+	const generatedId = $props.id();
+	const inputId = $derived(id ?? generatedId);
 </script>
 
-<label class="bos-toggle-wrapper" class:bos-toggle-wrapper--disabled={disabled} for={inputId}>
+<div class="bos-toggle-wrapper" class:bos-toggle-wrapper--disabled={disabled}>
 	<button
 		type="button"
 		role="switch"
 		id={inputId}
 		aria-checked={checked}
 		aria-disabled={disabled || undefined}
+		aria-label={label ?? 'Toggle'}
 		class="bos-toggle"
 		data-size={size}
 		data-checked={checked || undefined}
@@ -59,7 +61,7 @@
 	{#if label}
 		<span class="bos-toggle__label">{label}</span>
 	{/if}
-</label>
+</div>
 
 <style>
 	.bos-toggle-wrapper {
