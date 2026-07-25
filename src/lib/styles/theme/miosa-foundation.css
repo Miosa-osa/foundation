@@ -1,0 +1,100 @@
+@theme {
+	/* MIOSA Foundation: monochrome, compact, border-first */
+	--color-miosa-ink: #0a0a0a;
+	--color-miosa-black: #000000;
+	--color-miosa-carbon: #171717;
+	--color-miosa-muted: #737373;
+	--color-miosa-ash: #a1a1a1;
+	--color-miosa-smoke: #b9b9b9;
+	--color-miosa-border: #e5e5e5;
+	--color-miosa-mist: #f2f2f2;
+	--color-miosa-canvas: #ffffff;
+
+	--font-miosa-sans: 'Geist', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--font-miosa-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+	--text-miosa-caption: 12px;
+	--text-miosa-body: 14px;
+	--text-miosa-ui: 13px;
+	--text-miosa-subheading: 18px;
+	--text-miosa-display: 48px;
+
+	--radius-miosa-sm: 4px;
+	--radius-miosa-control: 10px;
+	--radius-miosa-card: 14px;
+	--radius-miosa-badge: 26px;
+	--radius-miosa-pill: 9999px;
+}
+
+:root {
+	/* Canonical MIOSA Foundation tokens */
+	--miosa-ink: #0a0a0a;
+	--miosa-black: #000000;
+	--miosa-carbon: #171717;
+	--miosa-muted: #737373;
+	--miosa-ash: #a1a1a1;
+	--miosa-smoke: #b9b9b9;
+	--miosa-border: #e5e5e5;
+	--miosa-mist: #f2f2f2;
+	--miosa-canvas: #ffffff;
+
+	--miosa-font-sans: 'Geist', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--miosa-font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+	--miosa-text-caption: 12px;
+	--miosa-text-ui: 13px;
+	--miosa-text-body: 14px;
+	--miosa-text-base: 16px;
+	--miosa-text-subheading: 18px;
+	--miosa-text-display: 48px;
+	--miosa-leading-body: 1.43;
+	--miosa-leading-ui: 1.5;
+	--miosa-leading-display: 1.1;
+	--miosa-tracking-display: -2.4px;
+	--miosa-tracking-subheading: -0.45px;
+
+	--miosa-space-1: 4px;
+	--miosa-space-2: 8px;
+	--miosa-space-3: 12px;
+	--miosa-space-4: 16px;
+	--miosa-space-5: 20px;
+	--miosa-space-6: 24px;
+	--miosa-section-gap: 48px;
+	--miosa-page-max: 1200px;
+
+	--miosa-radius-sm: 4px;
+	--miosa-radius-control: 10px;
+	--miosa-radius-card: 14px;
+	--miosa-radius-badge: 26px;
+	--miosa-radius-pill: 9999px;
+
+	--miosa-ring: oklab(0.145 0 0 / 0.1) 0 0 0 1px;
+
+	/* Compatibility bridge for the current generated component set */
+	--bos-font-family: var(--miosa-font-sans);
+	--bos-font-code-family: var(--miosa-font-mono);
+	--bos-brand-color: var(--miosa-ink);
+	--bos-primary-color: var(--miosa-ink);
+	--bos-secondary-color: var(--miosa-mist);
+	--bos-text-primary-color: var(--miosa-ink);
+	--bos-text-secondary-color: var(--miosa-muted);
+	--bos-text-tertiary-color: var(--miosa-ash);
+	--bos-text-emphasis-color: var(--miosa-ink);
+	--bos-background-primary-color: var(--miosa-canvas);
+	--bos-background-secondary-color: var(--miosa-mist);
+	--bos-border-color: var(--miosa-border);
+	--bos-divider-color: var(--miosa-border);
+	--bos-hover-color: var(--miosa-mist);
+	--bos-link-color: var(--miosa-ink);
+	--bos-icon-color: var(--miosa-muted);
+	--bos-shadow-1: none;
+	--bos-shadow-2: var(--miosa-ring);
+	--bos-shadow-3: var(--miosa-ring);
+	--bos-popover-radius: var(--miosa-radius-card);
+}
+
+body {
+	font-family: var(--miosa-font-sans);
+	background: var(--miosa-canvas);
+	color: var(--miosa-ink);
+}

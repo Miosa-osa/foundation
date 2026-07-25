@@ -208,7 +208,10 @@ export function blocksToMarkdown(blocks: EditorBlock[]): string {
 
 			case 'callout':
 				// Render callout as a blockquote with emoji prefix
-				const calloutType = block.properties?.calloutType || 'info';
+				const calloutType =
+					typeof block.properties?.calloutType === 'string'
+						? block.properties.calloutType
+						: 'info';
 				const emoji = { info: 'ℹ️', warning: '⚠️', success: '✅', error: '❌' }[calloutType] || 'ℹ️';
 				lines.push(`> ${emoji} ${block.content}`);
 				lines.push('');
