@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom/vitest";
 import { render, screen } from "@testing-library/svelte";
 import { createRawSnippet } from "svelte";
 import { describe, expect, it } from "vitest";
