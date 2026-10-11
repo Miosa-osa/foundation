@@ -31,7 +31,7 @@
 			</Input>
 			<Input placeholder="your-slug" size="large">
 				{#snippet prefix()}
-					<span style="font-size: 13px; color: var(--dt3); font-weight: 500;">app.miosa.ai/</span>
+					<span style="font-size: 13px; color: var(--dt3); font-weight: 500;">miosa.ai/</span>
 				{/snippet}
 			</Input>
 		</div>
